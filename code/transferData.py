@@ -18,14 +18,14 @@ print(f'[🔥] Connection ... \n{dbConnection}\n')
 try:
     start = time.time()
     print('[🔥] checking if table exists or creating one ...')
-    cursor.execute("CREATE TABLE IF NOT EXISTS corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INT(100), new_cases INT(100), total_deaths INT(100), new_deaths INT(100), icu_patients INT(100), new_tests INT(100), total_tests INT(100), positive_rate INT(100), total_vaccinations INT(100), people_vaccinated INT(100), people_fully_vaccinated INT(100), new_vaccinations INT(100), population INT(100));")
+    cursor.execute("CREATE TABLE IF NOT EXISTS corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INT(100) NULL, new_cases INT(100) NULL, total_deaths INT(100) NULL, new_deaths INT(100) NULL, icu_patients INT(100) NULL, new_tests INT(100) NULL, total_tests INT(100) NULL, positive_rate INT(100) NULL, total_vaccinations INT(100) NULL, people_vaccinated INT(100) NULL, people_fully_vaccinated INT(100) NULL, new_vaccinations INT(100) NULL, population INT(100) NULL);")
     end   = time.time()
-    print(f'[✔️ ] finished checking/creating!\ntime to create/check: {round(end-start, 2)}\n')
+    print(f'[✔] finished checking/creating!\ntime to create/check: {round(end-start, 2)} sec\n')
 except:
     print('[💣] error while creating the table!')
 
 #Inserting to the table
-csv_data = csv.reader(open('../datasets/owid-covid-data.csv'))
+csv_data = csv.reader(open('../datasets/gulf.csv'))
 header = next(csv_data)
 print('[🔥] Inserting in Process ...!')
 for row in csv_data:
@@ -37,4 +37,4 @@ for row in csv_data:
 dbConnection.commit()
 cursor.close()
 dbConnection.close()
-print('[✔️] Process Done!')
+print('[✔] Process Done!')
