@@ -1,4 +1,5 @@
 try:
+    import time
     import csv
     import pandas as pd
     import mysql.connector as conn
@@ -11,15 +12,22 @@ dbConnection = conn.connect(**config)
 #init the cursor
 cursor = dbConnection.cursor()
 #check if connection established!
-print(f'Connection ... \n{dbConnection}')
+print(f'[🔥] Connection ... \n{dbConnection}\n')
 
 #creating database table
-cursor.execute("CREATE TABLE corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INT(100), new_cases INT(100), total_deaths INT(100), new_deaths INT(100), icu_patients INT(100), new_tests INT(100), total_tests INT(100), positive_rate INT(100), total_vaccinations INT(100), people_vaccinated INT(100), people_fully_vaccinated INT(100), new_vaccinations INT(100), population INT(100));")
+try:
+    start = time.time()
+    print('[🔥] checking if table exists or creating one ...')
+    cursor.execute("CREATE TABLE IF NOT EXISTS corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INT(100), new_cases INT(100), total_deaths INT(100), new_deaths INT(100), icu_patients INT(100), new_tests INT(100), total_tests INT(100), positive_rate INT(100), total_vaccinations INT(100), people_vaccinated INT(100), people_fully_vaccinated INT(100), new_vaccinations INT(100), population INT(100));")
+    end   = time.time()
+    print(f'[✔️ ] finished checking/creating!\ntime to create/check: {round(end-start, 2)}\n')
+except:
+    print('[💣] error while creating the table!')
 
 #Inserting to the table
 csv_data = csv.reader(open('../datasets/owid-covid-data.csv'))
 header = next(csv_data)
-print('Inserting in Process ...!')
+print('[🔥] Inserting in Process ...!')
 for row in csv_data:
     print(row)
     cursor.execute(
@@ -29,4 +37,4 @@ for row in csv_data:
 dbConnection.commit()
 cursor.close()
 dbConnection.close()
-print('Process Done!')
+print('[✔️] Process Done!')
