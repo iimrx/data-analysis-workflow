@@ -25,13 +25,16 @@ except:
     print('[💣] error while creating the table!')
 
 #Inserting to the table
-csv_data = csv.reader(open('../datasets/gulf.csv'))
-header = next(csv_data)
-print('[🔥] Inserting in Process ...!')
-for row in csv_data:
-    print(row)
-    cursor.execute(
-        "INSERT INTO corona_analysis (iso_code,continent,location,date,total_cases,new_cases,total_deaths,new_deaths,icu_patients,new_tests,total_tests,positive_rate,total_vaccinations,people_vaccinated,people_fully_vaccinated,new_vaccinations,population) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", row)
+try:
+    csv_data = csv.reader(open('../datasets/gulf.csv'))
+    header = next(csv_data)
+    print('[🔥] Inserting in Process ...!')
+    for row in csv_data:
+        print(row)
+        cursor.execute(
+            "INSERT INTO corona_analysis (iso_code,continent,location,date,total_cases,new_cases,total_deaths,new_deaths,icu_patients,new_tests,total_tests,positive_rate,total_vaccinations,people_vaccinated,people_fully_vaccinated,new_vaccinations,population) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", row)
+except Exception as e:
+    print(f'[!] error while inserting... \n{e}')
 
 #Outputing the results
 dbConnection.commit()
