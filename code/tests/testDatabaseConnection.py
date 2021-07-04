@@ -1,7 +1,9 @@
 try:
-	from testConfig import *
-	import mysql.connector as conn
-	from mysql.connector import errorcode
+    import time
+    import csv
+    import pandas as pd
+    import mysql.connector as conn
+    from testConfig import *
 except Exception as e:
     print(f'error while importing packages!\n {e}')
 
@@ -10,49 +12,32 @@ dbConnection = conn.connect(**config)
 #init the cursor
 cursor = dbConnection.cursor()
 #check if connection established!
-print(f'Connection ... \n{dbConnection}')
+print(f'[🔥] Connection ... \n{dbConnection}\n')
 
 #creating database table
-TABLES = {}
-TABLES['corona_analysis'] = (
-    "CREATE TABLE `corona_analysis` ("
-    "  `iso_code` varchar(50) NOT NULL,"
-    "  `continent` varchar(50) NOT NULL,"
-    "  `location` varchar(50) NOT NULL,"
-    "  `date` date NOT NULL,"
-    "  `total_cases` int('100') NOT NULL AUTO_INCREMENT,"
-    "  `new_cases` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `total_deaths` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `new_deaths` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `icu_patients` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `new_tests` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `total_tests` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `positive_rate` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `total_vaccinations` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `people_vaccinated` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `people_fully_vaccinated` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `new_vaccinations` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `median_age` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `aged_65_older` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `aged_70_older` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `female_smokers` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `male_smokers` int(100) NOT NULL AUTO_INCREMENT,"
-    "  `human_development_index` int(100) NOT NULL AUTO_INCREMENT,"
-    "  PRIMARY KEY (`iso_code`)"
-    ") ENGINE=InnoDB")
+try:
+    start = time.time()
+    print('[🔥] checking if table exists or creating one ...')
+    cursor.execute("CREATE TABLE IF NOT EXISTS corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INT(100) NULL, new_cases INT(100) NULL, total_deaths INT(100) NULL, new_deaths INT(100) NULL, icu_patients INT(100) NULL, new_tests INT(100) NULL, total_tests INT(100) NULL, positive_rate INT(100) NULL, total_vaccinations INT(100) NULL, people_vaccinated INT(100) NULL, people_fully_vaccinated INT(100) NULL, new_vaccinations INT(100) NULL, population INT(100) NULL);")
+    end   = time.time()
+    print(f'[✔] finished checking/creating!\ntime to create/check: {round(end-start, 2)} sec\n')
+except:
+    print('[💣] error while creating the table!')
 
-for table_name in TABLES:
-    table_description = TABLES[table_name]
-    try:
-        print("Creating table {}: ".format(table_name), end='')
-        cursor.execute(table_description)
-    except conn.Error as err:
-        if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
-            print("already exists.")
-        else:
-            print(err.msg)
-    else:
-        print("OK")
+#Inserting to the table
+try:
+    csv_data = csv.reader(open('/home/liquidx/Desktop/sideProjecTs/datasets/gulf.csv'))
+    header = next(csv_data)
+    print('[🔥] Inserting in Process ...!')
+    for row in csv_data:
+        print(row)
+        cursor.execute(
+            "INSERT INTO corona_analysis (iso_code,continent,location,date,total_cases,new_cases,total_deaths,new_deaths,icu_patients,new_tests,total_tests,positive_rate,total_vaccinations,people_vaccinated,people_fully_vaccinated,new_vaccinations,population) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", row)
+except Exception as e:
+    print(f'[!] error while inserting... \n{e}')
 
+#Outputing the results
+dbConnection.commit()
 cursor.close()
 dbConnection.close()
+print('[✔] Process Done!')
