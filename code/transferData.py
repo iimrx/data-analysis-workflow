@@ -17,7 +17,7 @@ def CreateInsertDB():
     #creating database table
     start = time.time()
     print('[🔥] checking if table exists or creating one ...')
-    dbquery = "CREATE TABLE IF NOT EXISTS corona_analysis (iso_code text, continent text, location text, date DATE, total_cases int NULL, new_cases int NULL, total_deaths int NULL, new_deaths int NULL, icu_patients int NULL, new_tests int NULL, total_tests int NULL, positive_rate real NULL, total_vaccinations int NULL, people_vaccinated int NULL, people_fully_vaccinated int NULL, new_vaccinations int NULL, population int NULL, median_age int NULL, aged_65_older int NULL, aged_70_older int NULL, female_smokers int NULL, male_smokers int NULL, human_development_index int NULL);"
+    dbquery = "CREATE TABLE IF NOT EXISTS corona_analysis (iso_code text, continent text, location text, date DATE, total_cases decimal NULL, new_cases decimal NULL, total_deaths decimal NULL, new_deaths decimal NULL, icu_patients decimal NULL, new_tests decimal NULL, total_tests decimal NULL, positive_rate real NULL, total_vaccinations decimal NULL, people_vaccinated decimal NULL, people_fully_vaccinated decimal NULL, new_vaccinations decimal NULL, population decimal NULL, median_age decimal NULL, aged_65_older decimal NULL, aged_70_older decimal NULL, female_smokers decimal NULL, male_smokers decimal NULL, human_development_index decimal NULL);"
     cursor.execute(dbquery)
     end   = time.time()
     print(f'[✔] finished checking/creating!\ntime to create/check: {round(end-start, 2)} sec\n')
