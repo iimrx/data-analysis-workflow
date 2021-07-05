@@ -6,7 +6,7 @@ import PostgreSQL_Config as config
 
 #creating connection and configuration
 dbConnect = conn.connect(database=config.database, user=config.user,
-                            password=config.password, host=config.host, port=config.port)
+                         password=config.password, host=config.host, port=config.port)
 #init the cursor
 cursor = dbConnect.cursor()
 #check if connection established!
