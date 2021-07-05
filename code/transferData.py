@@ -11,13 +11,13 @@ dbConnect = conn.connect(database=config.database, user=config.user,
 cursor = dbConnect.cursor()
 #check if connection established!
 print(f'[🔥] Connection ... \n{dbConnect}\n\
-        [✔] Connected Successfully!')
+      \n[✔] Connected Successfully!')
 
 def CreateInsertDB():
     #creating database table
     start = time.time()
     print('[🔥] checking if table exists or creating one ...')
-    dbquery = "CREATE TABLE corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INTEGER(100) NULL, new_cases INTEGER(100) NULL, total_deaths INTEGER(100) NULL, new_deaths INTEGER(100) NULL, icu_patients INTEGER(100) NULL, new_tests INTEGER(100) NULL, total_tests INTEGER(100) NULL, positive_rate DOUBLE(100) NULL, total_vaccinations INTEGER(100) NULL, people_vaccinated INTEGER(100) NULL, people_fully_vaccinated INTEGER(100) NULL, new_vaccinations INTEGER(100) NULL, population INTEGER(100) NULL, median_age INTEGER(100) NULL, aged_65_older INTEGER(100) NULL, aged_70_older INTEGER(100) NULL, female_smokers INTEGER(100) NULL, male_smokers INTEGER(100) NULL, human_development_index INTEGER(100) NULL);"
+    dbquery = "CREATE TABLE IF NOT EXISTS corona_analysis (iso_code text, continent text, location text, date DATE, total_cases int NULL, new_cases int NULL, total_deaths int NULL, new_deaths int NULL, icu_patients int NULL, new_tests int NULL, total_tests int NULL, positive_rate real NULL, total_vaccinations int NULL, people_vaccinated int NULL, people_fully_vaccinated int NULL, new_vaccinations int NULL, population int NULL, median_age int NULL, aged_65_older int NULL, aged_70_older int NULL, female_smokers int NULL, male_smokers int NULL, human_development_index int NULL);"
     cursor.execute(dbquery)
     end   = time.time()
     print(f'[✔] finished checking/creating!\ntime to create/check: {round(end-start, 2)} sec\n')
