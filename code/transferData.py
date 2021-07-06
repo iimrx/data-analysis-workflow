@@ -4,9 +4,10 @@ import pandas as pd
 import psycopg2 as conn
 from PostgreSQL_Config import config
 
-#creating connection and configuration
-DBconnect = conn.connect(**config)
-#init the cursor
+#creating connection and configuration and initialize the cursor
+DBconnect  = conn.connect(**config)
+autocommit = conn.extensions.ISOLATION_LEVEL_AUTOCOMMIT
+DBconnect.set_isolation_level( autocommit )
 cursor = DBconnect.cursor()
 #check if connection established!
 print(f'[🔥] Connecting to Database ... \n{DBconnect}\
