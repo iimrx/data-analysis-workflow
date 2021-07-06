@@ -7,7 +7,7 @@ from PostgreSQL_Config import config
 #creating connection and configuration and initialize the cursor
 DBconnect  = conn.connect(**config)
 autocommit = conn.extensions.ISOLATION_LEVEL_AUTOCOMMIT
-DBconnect.set_isolation_level( autocommit )
+DBconnect.set_isolation_level(autocommit)
 cursor = DBconnect.cursor()
 #check if connection established!
 print(f'[🔥] Connecting to Database ... \n{DBconnect}\
@@ -18,7 +18,7 @@ def UserInput():
     print('[🔥] Getting User Details ...')
     DBname = input("Enter New Database Name: ")
     DBtable= input("Enter New Table Name: ")
-    DBuser = input("Enter New Database Username: ")
+    DBuser = input("Enter New Username: ")
     DBpass = input("Enter New User Password: ")
     print('[✔] All Details Stored Successfully!\n')
 
