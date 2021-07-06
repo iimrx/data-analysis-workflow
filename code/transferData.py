@@ -3,23 +3,28 @@ import csv
 import pandas as pd
 import psycopg2 as conn
 from PostgreSQL_Config import config
+
 #creating connection and configuration
-dbConnect = conn.connect(**config)
+DBconnect = conn.connect(**config)
 #init the cursor
-cursor = dbConnect.cursor()
+cursor = DBconnect.cursor()
 #check if connection established!
-print(f'[🔥] Connection ... \n{dbConnect}\n\
-      \n[✔] Connected Successfully!')
-#declaring user information
-DBname = input("Enter New Database Name: ")
-DBtable= input("Enter New Table Name: ")
-DBuser = input("Enter New Database Username: ")
-DBpass = input("Enter New User Password: ")
+print(f'[🔥] Connecting to Database ... \n{DBconnect}\
+      \n[✔] Connected Successfully!\n')
+
+def UserInput():
+    #declaring user information
+    print('[🔥] Getting User Details ...')
+    DBname = input("Enter New Database Name: ")
+    DBtable= input("Enter New Table Name: ")
+    DBuser = input("Enter New Database Username: ")
+    DBpass = input("Enter New User Password: ")
+    print('[✔] All Details Stored Successfully!\n')
 
 def CreateDBUser():
-    #create new database user using psycopg2
+    #create new database user
     startCreateDBUser = time.time()
-    print('[🔥] Creating New database user ...')
+    print('\n[🔥] Creating New database user ...')
     dbqueryCreateUser = "CREATE USER DBuser WITH PASSWORD 'DBpass';"
     dbqueryGrantUser  = "GRANT ALL PRIVILEGES ON DATABASE DBname TO DBuser;"
     cursor.execute(dbqueryCreateUser, dbqueryGrantUser)
@@ -27,7 +32,7 @@ def CreateDBUser():
     print(f'[✔] Finished creating database user!\nTime to create database user: {round(endCreateDBUser-startCreateDBUser, 2)} sec\n')
 
 def CreateDB():
-    #create new database using psycopg2
+    #create new database
     startCreateDB = time.time()
     print('[🔥] Checking if database exists or creating new one ...')
     dbqueryCreate = "CREATE DATABASE DBname;"
@@ -35,7 +40,7 @@ def CreateDB():
     endCreateDB   = time.time()
     print(f'[✔] Finished creating database!\nTime to create database: {round(endCreateDB-startCreateDB, 2)} sec\n')    
 
-def CreateInsertDB():
+def TableInsertDB():
     #creating database table and calc time of excution
     startCreate = time.time()
     print('[🔥] Checking if table exists or creating one ...')
@@ -56,11 +61,10 @@ def CreateInsertDB():
     print(f'[✔] Finished inserting!\nTime to insert all data: {round(endInsert-startInsert, 2)} sec\n')
 
     #Outputing the results
-    dbConnect.commit()
+    DBconnect.commit()
     cursor.close()
-    dbConnect.close()
+    DBconnect.close()
     print('[✔] Process Done!')
 
-CreateDBUser()
-CreateDB()
-CreateInsertDB()
+#excuting all function
+UserInput(),CreateDBUser(),CreateDB(),TableInsertDB()
