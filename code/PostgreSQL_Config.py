@@ -1,3 +1,4 @@
+#cloud sql instance configurations
 config = {
 	'user' : 'spadmin',
 	'password' : 'Zaak1234@',
