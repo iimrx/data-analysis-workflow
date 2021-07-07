@@ -14,15 +14,19 @@ Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Dat
    - python3, pylance, Database Client
 - Ubuntu 20.04+ (OS)
 ## You can run the project by running the following command (inside the project root):
+Before you run the code, make sure to set your cloud sql instance configurations in the following file:
 ```python
-First run:
+nano code/PostgreSQL_Config.py
+```
+Then after adding your configurations, excute the code by running the following command:
+```python
 cd code/
 ```
+Then:
 ```python
-Second run:
 python3 transferData.py
 ```
-## Links After Deploying to Heroku Cloud & Google Cloud
+## Links For Dashboards:
 <table class="tg">
   <tr>
     <th class="tg-yw4l"><b>Name</b></th>
