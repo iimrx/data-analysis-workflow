@@ -18,10 +18,10 @@ def UserInput():
 
 def DBConnect():
     #creating connection, configuration and initializing the cursor
+    global cursor, DBconnect #making the cursor global for other functions
     DBconnect  = conn.connect(**config)
     autocommit = conn.extensions.ISOLATION_LEVEL_AUTOCOMMIT
     DBconnect.set_isolation_level(autocommit)
-    global cursor #making the cursor global for other functions
     cursor = DBconnect.cursor()
     #check if connection established!
     print(f'[🔥] Connecting to Database ... \n{DBconnect}\
