@@ -16,7 +16,7 @@ Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Dat
 ## You can run the project by running the following command (inside the project root):
 ```python
 First run:
-codecd code/
+cd code/
 ```
 ```python
 Second run:
