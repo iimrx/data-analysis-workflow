@@ -10,7 +10,7 @@ Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Dat
 - Google Data Studio (Dashboard) 
 - Python 3.8+ (Language)
    - All Packages Used Found In : requirements.txt
-- Visual Studio Code (Editor) and Jupyter-Notebook (NoteBook)
+- Visual Studio Code (Code Editor) and Jupyter-Notebook (Data Analysis and Engineering)
    - python3, pylance, Database Client
 - Ubuntu 20.04+ (OS)
 ## You can run the project by running the following command (inside the project root):
