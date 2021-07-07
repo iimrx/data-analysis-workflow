@@ -15,6 +15,11 @@ Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Dat
 - Ubuntu 20.04+ (OS)
 ## You can run the project by running the following command (inside the project root):
 ```python
+First run:
+codecd code/
+```
+```python
+Second run:
 python3 transferData.py
 ```
 ## Links After Deploying to Heroku Cloud & Google Cloud
