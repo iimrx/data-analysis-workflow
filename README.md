@@ -1,11 +1,11 @@
 # Covid-19 Dashboard
 Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Data Studio.
 ## This Challenge Consists of Many interesting parts:
-- Create Google Cloud SQL(MySQL Database).
+- Create Google Cloud SQL(PostgreSQL Database).
 - Dashboard Running on Google Data Studio (GDS).
 - Linked With Google Cloud SQL Instance.
 ## Tech Used in This Challenge:
-- Google Cloud SQL (MySQL)
+- Google Cloud SQL (PostgreSQL)
    - Storge, Backup
 - Google Data Studio (Dashboard) 
 - Python 3.8+ (Language)
