@@ -1,8 +1,8 @@
 #cloud sql instance configurations
 config = {
-	'user' : 'spadmin',
-	'password' : 'Zaak1234@',
-	'host' : '34.136.43.94',
-	'database' : 'sideprojectdb',
+	'user' : 'postgres',
+	'password' : '$%)_zPinNO++',
+	'host' : '35.197.156.122',
+	'database' : 'postgres',
 	'port' : 5432
 }
