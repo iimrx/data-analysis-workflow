@@ -2,7 +2,7 @@ import time
 import csv
 import pandas as pd
 import psycopg2 as conn
-from PostgreSQL_Config import config
+from configurations.PostgreSQL_Config import config
 
 def UserInput():
     #declaring user information
