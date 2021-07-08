@@ -16,7 +16,7 @@ Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Dat
 ## You can run the project by running the following command (inside the project root):
 Before you run the code, make sure to set your cloud sql instance configurations in the following file:
 ```python
-nano code/PostgreSQL_Config.py
+nano code/configurations/PostgreSQL_Config.py
 ```
 Then after adding your configurations, excute the code by running the following command:
 ```python
