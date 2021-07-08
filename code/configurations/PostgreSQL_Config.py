@@ -1,8 +1,8 @@
-#cloud sql instance configurations
+#cloud sql instance configurations(PostgreSQL)
 config = {
-	'user' : '#',
-	'password' : '#',
-	'host' : '#',
-	'database' : '#',
-	'port' : #
+	'user' : 'postgres',
+	'password' : '$%)_zPinNO++',
+	'host' : '35.197.156.122',
+	'database' : 'postgres',
+	'port' : 5432
 }
