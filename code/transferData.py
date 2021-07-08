@@ -72,5 +72,5 @@ def TableInsertDB():
     DBconnect.close()
     print('[✔] Process Done!')
 
-#excuting all function
+#excuting all functions
 UserInput(),DBConnect(),CreateDBUser(),CreateDB(),TableInsertDB()
