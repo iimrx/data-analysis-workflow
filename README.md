@@ -26,7 +26,7 @@ Then:
 ```python
 python3 transferData.py
 ```
-## Links For Dashboards:
+## Link To The Dashboard:
 <table class="tg">
   <tr>
     <th class="tg-yw4l"><b>Name</b></th>
