@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('/home/liquidx/Desktop/sideProjecTs/datasets/gulf.csv')
+data = pd.read_csv('#')
 data.fillna(0, inplace=True)
-data.to_csv('/home/liquidx/Desktop/sideProjecTs/datasets/gulf.csv', index=False)
+data.to_csv('#', index=False)
 print(data.head())

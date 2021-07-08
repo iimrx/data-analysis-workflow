@@ -26,7 +26,7 @@ except:
 
 #Inserting to the table
 try:
-    csv_data = csv.reader(open('/home/liquidx/Desktop/sideProjecTs/datasets/gulf.csv'))
+    csv_data = csv.reader(open('#'))
     header = next(csv_data)
     print('[🔥] Inserting in Process ...!')
     for row in csv_data:
