@@ -35,9 +35,12 @@ python3 transferData.py
   </tr>
   
   <tr>
-    <td class="tg-yw4l">#</td>
+    <td class="tg-yw4l">Covid Dashboard</td>
     <td class="tg-yw4l">#</td>
     <td class="tg-yw4l"><a href="#">
       <p>#</p>
     </a></td>
   </tr>
+</table>
+
+[![Covid Dashboard](img/logo.png)]("Lendo Company")
