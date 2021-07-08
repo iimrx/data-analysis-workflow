@@ -1,3 +1,4 @@
+![Covid Dashboard](img/logo.png)
 # Covid-19 Dashboard
 Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Data Studio.
 ## This Challenge Consists of Many interesting parts:
@@ -42,5 +43,3 @@ python3 transferData.py
     </a></td>
   </tr>
 </table>
-
-[![Covid Dashboard](img/logo.png)]("Lendo Company")
