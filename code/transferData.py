@@ -61,7 +61,7 @@ def TableInsertDB():
     cursor.execute(dbquery)
     endCreate   = time.time()
     print(f'[✔] Finished creating Table: {DBtable}!\nTime to create/check Table: {round(endCreate-startCreate, 2)} sec\n')
-    
+
     #Inserting to the table we inserted before!
     csv_data = csv.reader(open('../datasets/ksa.csv'))
     print('[🔥] Inserting in Process ...!')
