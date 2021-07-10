@@ -18,7 +18,7 @@ Before you run the code, make sure to set your cloud sql instance configurations
 ```python
 nano code/configurations/PostgreSQL_Config.py
 ```
-Then after adding your configurations and downloaded needed packages(requirements.txt), excute the code by running the following Two command:
+Then after adding your configurations and downloaded needed packages(requirements.txt), excute the code by running the following Two commands:
 ```python
 cd code/
 ```
