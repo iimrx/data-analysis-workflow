@@ -6,7 +6,6 @@ on:
       - 'main'
   schedule:
     - cron: '0 3 * * *'
-
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -21,4 +20,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Running the ETL
-      run: python ETL.py
+      run: ./code/python ETL.py
