@@ -26,9 +26,9 @@ ksa['date'] = pd.to_datetime(ksa['date'])
 #now lets save our new dataset to its path,
 #checking if the folder exists to overright or create new
 try:
-    ksa.to_csv('../datasets/created/ksa.csv', index=False)
+    ksa.to_csv('./datasets/created/ksa.csv', index=False)
 except: #if the file not exists well create new file
-    save_loc = '../datasets/created/ksa.csv' #path to the file
+    save_loc = './datasets/created/ksa.csv' #path to the file
     if not os.path.exists(save_loc): #checking for the file
         os.mkdir(save_loc) #if not create new
-    ksa.to_csv('../datasets/created/ksa.csv', index=False) #save
+    ksa.to_csv('./datasets/created/ksa.csv', index=False) #save
