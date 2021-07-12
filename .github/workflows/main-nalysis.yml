@@ -28,7 +28,7 @@ jobs:
     - name: Running the ETL
       run: python ./code/ETL/ETL.py
     #Commiting files after updating the dataset
-    - name: commit data
+    - name: Commit data to the Repo
       run: |
         git config --local user.email "zaak0101@hotmail.com"
         git config --local user.name "Abdulrazak A. Osman"
