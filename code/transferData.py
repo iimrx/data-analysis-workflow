@@ -32,7 +32,7 @@ def TableInsertDB():
     #creating database table and calc time of excution
     startCreate = time.time()
     print('[🔥] Checking if table exists or creating one ...')
-    dbquery = "CREATE TABLE IF NOT EXISTS ksadata (iso_code text, continent text, location text, date date, total_cases decimal NULL, new_cases decimal NULL, total_deaths decimal NULL, new_deaths decimal NULL, icu_patients decimal NULL, new_tests decimal NULL, total_tests decimal NULL, positive_rate real NULL, total_vaccinations decimal NULL, people_vaccinated decimal NULL, people_fully_vaccinated decimal NULL, new_vaccinations decimal NULL, population decimal NULL, median_age decimal NULL, aged_65_older decimal NULL, aged_70_older decimal NULL, female_smokers decimal NULL, male_smokers decimal NULL, human_development_index decimal NULL);"
+    dbquery = "CREATE TABLE IF NOT EXISTS ksadata (iso_code text, continent text, location text, date DATE, total_cases decimal NULL, new_cases decimal NULL, total_deaths decimal NULL, new_deaths decimal NULL, icu_patients decimal NULL, new_tests decimal NULL, total_tests decimal NULL, positive_rate real NULL, total_vaccinations decimal NULL, people_vaccinated decimal NULL, people_fully_vaccinated decimal NULL, new_vaccinations decimal NULL, population decimal NULL, median_age decimal NULL, aged_65_older decimal NULL, aged_70_older decimal NULL, female_smokers decimal NULL, male_smokers decimal NULL, human_development_index decimal NULL);"
     cursor.execute(dbquery)
     endCreate   = time.time()
     print(f'[✔] Finished creating Table: ksadata!\nTime to create/check Table: {round(endCreate-startCreate, 2)} sec\n')
