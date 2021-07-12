@@ -26,8 +26,7 @@ jobs:
         pip install -r requirements.txt
     #Running the ETL script to install and update the data as structured
     - name: Running the ETL
-      run: |
-	python ./code/ETL.py
+      run: python ./code/ETL.py
     #Commiting files after updating the dataset
     - name: commit data
       run: |
