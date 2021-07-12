@@ -35,7 +35,7 @@ def CreateDBUser():
         dbqueryGrantUser  = "GRANT ALL PRIVILEGES ON DATABASE {} TO {};".format(DBname,DBuser)
         cursor.execute(dbqueryCreateUser, dbqueryGrantUser)
         endCreateDBUser   = time.time()
-        print(f'[✔] Finished creating database user!\nTime to create database user: {round(endCreateDBUser-startCreateDBUser, 2)} sec\n')
+        print(f'[✔] Finished creating database user: {DBuser}!\nTime to create database user: {round(endCreateDBUser-startCreateDBUser, 2)} sec\n')
     except:
         pass
         print(f'[✔] User: {DBuser} Exists and Have All Privileges!')
@@ -48,7 +48,7 @@ def CreateDB():
         dbqueryCreate = "CREATE DATABASE {};".format(DBname)
         cursor.execute(dbqueryCreate)
         endCreateDB   = time.time()
-        print(f'[✔] Finished creating database!\nTime to create database: {round(endCreateDB-startCreateDB, 2)} sec\n')
+        print(f'[✔] Finished creating database: {DBname}\nTime to create database: {round(endCreateDB-startCreateDB, 2)} sec\n')
     except:
         pass
         print(f'[✔] Database: {DBname} Exists and Can Accessed!')
@@ -63,7 +63,7 @@ def TableInsertDB():
     print(f'[✔] Finished creating Table: {DBtable}!\nTime to create/check Table: {round(endCreate-startCreate, 2)} sec\n')
 
     #Inserting to the table we inserted before!
-    csv_data = csv.reader(open('../datasets/created/gulf.csv'))
+    csv_data = csv.reader(open('./datasets/created/ksa.csv'))
     print('[🔥] Inserting in Process ...!')
     startInsert = time.time()
     for row in csv_data:
