@@ -4,10 +4,12 @@ Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Dat
 - Create Google Cloud SQL(PostgreSQL Database) using python(v3.8+).
 - Dashboard Created/Running on Google Data Studio (GDS).
 - Linked GDS With GCS Instance.
+- Github Actions and scheduled cron jobs.
 ### Tech Used in This Challenge:
 - Google Cloud SQL (PostgreSQL)
    - Storge, Backup
-- Google Data Studio (Dashboard) 
+- Google Data Studio (Dashboard)
+- Github Actions (CI/CD) 
 - Python 3.8+ (Language)
    - All Packages Used Found In : requirements.txt
 - Visual Studio Code (Code Editor) and Jupyter-Notebook (Data Analysis and Engineering)
@@ -18,13 +20,9 @@ Before you run the code, make sure to set your cloud sql instance configurations
 ```python
 nano code/configurations/PostgreSQL_Config.py
 ```
-Then after adding your configurations and downloaded needed packages(requirements.txt), excute the code by running the following Two commands:
+Then after adding your configurations and downloaded needed packages(requirements.txt), excute the main code script (the dataset is scheduled to automatic download using the github action):
 ```python
-cd code/
-```
-Then:
-```python
-python3 transferData.py
+python3 code/transferData.py
 ```
 ### Link To The Dashboard:
 <table class="tg">
