@@ -27,7 +27,7 @@ jobs:
     #Running the ETL script to install and update the data as structured
     - name: Running the ETL
       run: |
-	./code/python ETL.py
+	code/python ETL.py
     #Commiting files after updating the dataset
     - name: commit data
       run: |
