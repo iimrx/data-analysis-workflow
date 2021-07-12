@@ -63,7 +63,7 @@ def TableInsertDB():
     print(f'[✔] Finished creating Table: {DBtable}!\nTime to create/check Table: {round(endCreate-startCreate, 2)} sec\n')
 
     #Inserting to the table we inserted before!
-    csv_data = csv.reader(open('../datasets/created/ksa.csv'))
+    csv_data = csv.reader(open('../datasets/created/gulf.csv'))
     print('[🔥] Inserting in Process ...!')
     startInsert = time.time()
     for row in csv_data:
