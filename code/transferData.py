@@ -32,19 +32,19 @@ def TableInsertDB():
     #creating database table and calc time of excution
     startCreate = time.time()
     print('[🔥] Checking if table exists or creating one ...')
-    dbquery = "CREATE TABLE IF NOT EXISTS ksadata (iso_code text, continent text, location text, date DATE, total_cases decimal NULL, new_cases decimal NULL, total_deaths decimal NULL, new_deaths decimal NULL, icu_patients decimal NULL, new_tests decimal NULL, total_tests decimal NULL, positive_rate real NULL, total_vaccinations decimal NULL, people_vaccinated decimal NULL, people_fully_vaccinated decimal NULL, new_vaccinations decimal NULL, population decimal NULL, median_age decimal NULL, aged_65_older decimal NULL, aged_70_older decimal NULL, female_smokers decimal NULL, male_smokers decimal NULL, human_development_index decimal NULL);"
+    dbquery = "CREATE TABLE IF NOT EXISTS ksadata (iso_code text, continent text, location text, dates date, total_cases real NULL, new_cases real NULL, total_deaths real NULL, new_deaths real NULL, icu_patients real NULL, new_tests real NULL, total_tests real NULL, positive_rate real NULL, total_vaccinations real NULL, people_vaccinated real NULL, people_fully_vaccinated real NULL, new_vaccinations real NULL, population real NULL, median_age real NULL, aged_65_older real NULL, aged_70_older real NULL, female_smokers real NULL, male_smokers real NULL, human_development_index real NULL);"
     cursor.execute(dbquery)
     endCreate   = time.time()
     print(f'[✔] Finished creating Table: ksadata!\nTime to create/check Table: {round(endCreate-startCreate, 2)} sec\n')
 
     #Inserting to the table we inserted before!
-    csv_data = csv.reader(open('./datasets/created/ksa.csv'))
+    csv_data = csv.reader(open('../datasets/created/ksa.csv'))
     print('[🔥] Inserting in Process ...!')
     startInsert = time.time()
     for row in csv_data:
         print(row)
         cursor.execute(
-            "INSERT INTO ksadata (iso_code,continent,location,date,total_cases,new_cases,total_deaths,new_deaths,icu_patients,new_tests,total_tests,positive_rate,total_vaccinations,people_vaccinated,people_fully_vaccinated,new_vaccinations,population,median_age,aged_65_older,aged_70_older,female_smokers,male_smokers,human_development_index) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", row)
+            "INSERT INTO ksadata (iso_code,continent,location,dates,total_cases,new_cases,total_deaths,new_deaths,icu_patients,new_tests,total_tests,positive_rate,total_vaccinations,people_vaccinated,people_fully_vaccinated,new_vaccinations,population,median_age,aged_65_older,aged_70_older,female_smokers,male_smokers,human_development_index) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", row)
     endInsert  = time.time()
     print(f'[✔] Finished inserting!\nTime to insert all data: {round(endInsert-startInsert, 2)} sec\n')
 
