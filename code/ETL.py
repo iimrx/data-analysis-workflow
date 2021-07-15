@@ -37,10 +37,10 @@ except: #if the wrangling proccess didn't work, will print error message
 try:
     #now lets save our new dataset to its path,
     #checking if the folder exists to overright or create new
-    data.to_csv('../datasets/created/ksa.csv', index=False)
+    data.to_csv('./datasets/created/ksa.csv', index=False)
     print('Dataset File Saved!')
 except: #if the file not exists well create new file
-    save_loc = '../datasets/created/ksa.csv' #path to the file
+    save_loc = './datasets/created/ksa.csv' #path to the file
     if not os.path.exists(save_loc): #checking for the file
         os.mkdir(save_loc) #if not create new
-    ksa.to_csv('../datasets/created/ksa.csv', index=False) #save
+    ksa.to_csv('./datasets/created/ksa.csv', index=False) #save
