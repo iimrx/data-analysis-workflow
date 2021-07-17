@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: '0 9 * * *'
 jobs:
-  build:
+  ETL:
     #Here we establishing the os as needed
     runs-on: ubuntu-20.04
     steps:
@@ -22,11 +22,14 @@ jobs:
     #Installing all needed dependencies
     - name: Installing dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install -r requirements.txt
-    #Running the ETL script to install and update the data as structured
-    - name: Running the ETL
-      run: python ./code/ETL.py
+        /opt/hostedtoolcache/Python/3.8.10/x64/bin/python -m pip install --upgrade pip
+    #Running the ETL script to install and update the data as structured,
+    #then transfer it to the database
+    - name: Running the ETL and TL
+      run: |
+        python ./code/ETL.py
+        python ./code/transferData.py
     #Commiting files after updating the dataset
     - name: Commit data to the Repo
       run: |
