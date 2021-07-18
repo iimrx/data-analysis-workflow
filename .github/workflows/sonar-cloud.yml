@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Clone Repository
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        uses: actions/checkout@v2
       - name: SonarCloud Scan - Analyzing the Code
         uses: SonarSource/sonarcloud-github-action@v1.6
         env:
