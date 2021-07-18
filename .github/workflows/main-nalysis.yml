@@ -14,34 +14,34 @@ jobs:
     #Here we establishing the os as needed
     runs-on: ubuntu-20.04
     steps:
-      - name: Clone Repository
-      - uses: actions/checkout@v2
-      #Setting up python version and action setup
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8.10'
-      #Installing all needed dependencies
-      - name: Installing dependencies
-        run: |
-          pip install -r requirements.txt
-          python3 -m pip install --upgrade pip
-      #Running the ETL script to install and update the data as structured,
-      #then transfer it to the database
-      - name: Running the ETL and TL
-        run: |
-          python ./code/ETL.py
-          python ./code/transferData.py
-      #Commiting files after updating the dataset
-      - name: Commit data to the Repo
-        run: |
-          git config --local user.email "zaak0101@hotmail.com"
-          git config --local user.name "Abdulrazak A. Osman"
-          git add -A
-          git commit -m "updated data" -a
-      #Pushing changes
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main  
+    - name: Clone Repository
+    - uses: actions/checkout@v2
+    #Setting up python version and action setup
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8.10'
+    #Installing all needed dependencies
+    - name: Installing dependencies
+      run: |
+        pip install -r requirements.txt
+        python3 -m pip install --upgrade pip
+    #Running the ETL script to install and update the data as structured,
+    #then transfer it to the database
+    - name: Running the ETL and TL
+      run: |
+        python ./code/ETL.py
+        python ./code/transferData.py
+    #Commiting files after updating the dataset
+    - name: Commit data to the Repo
+      run: |
+        git config --local user.email "zaak0101@hotmail.com"
+        git config --local user.name "Abdulrazak A. Osman"
+        git add -A
+        git commit -m "updated data" -a
+    #Pushing changes
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main  
