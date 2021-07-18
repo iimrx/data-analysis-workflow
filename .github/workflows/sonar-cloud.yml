@@ -1,0 +1,27 @@
+#The name of the build
+name: SonarCloud Scan
+#Declaring the branches and types
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    types: [opened, synchronize, reopened]
+  #Setting the time the build will be wunning everyday
+  schedule:
+    - cron: '0/15 9 * * *'
+#Starting jobs and workflow
+jobs:
+  SonarCloud:
+    name: SonarCloud
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone Repository
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan - Analyzing the Code
+        uses: SonarSource/sonarcloud-github-action@v1.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
