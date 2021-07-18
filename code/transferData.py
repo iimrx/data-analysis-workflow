@@ -1,7 +1,7 @@
 import time,csv
 import pandas as pd
 import sqlite3 as conn
-from ETL import *
+from ETL import data
 
 def DBConnect():
     #creating connection, configuration and initializing the cursor
