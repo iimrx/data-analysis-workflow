@@ -21,10 +21,9 @@ try:
     #~60 columns is to much and not all of them are needed,
     #so we gonna only take needed data columns to a new file and stay with it
     data = data[['iso_code','continent','location','date','total_cases','new_cases',
-                'total_deaths','new_deaths','icu_patients','new_tests','total_tests',
+                'total_deaths','new_deaths','new_tests','total_tests',
                 'positive_rate','total_vaccinations','people_vaccinated','people_fully_vaccinated',
-                'new_vaccinations','population','median_age','aged_65_older','aged_70_older',
-                'female_smokers','male_smokers','human_development_index'
+                'new_vaccinations','population'
                 ]]
     #rechanging date column name
     data = data.rename(columns={'iso_code':'countries_code','continent':'region','location':'countries','people_fully_vaccinated':'fully_vaccinated','people_vaccinated':'vaccinated','total_vaccinations':'vaccinations'})
