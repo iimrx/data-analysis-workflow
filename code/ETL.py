@@ -35,10 +35,10 @@ except Exception as e: #if the wrangling proccess didn't work, will print error 
 try:
     #now lets save our new dataset to its path,
     #checking if the folder exists to overright or create new
-    data.to_csv('./datasets/created/ksa.csv', index=False)
+    save_loc = './datasets/created/ksa.csv' #path to the file
+    data.to_csv(save_loc, index=False)
     print('Dataset File Saved!')
 except: #if the file not exists well create new file
-    save_loc = './datasets/created/ksa.csv' #path to the file
     if not os.path.exists(save_loc): #checking for the file
         os.mkdir(save_loc) #if not create new
-    ksa.to_csv('./datasets/created/ksa.csv', index=False) #save
+    ksa.to_csv(save_loc, index=False) #save
