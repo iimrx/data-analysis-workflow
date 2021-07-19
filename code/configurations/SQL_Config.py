@@ -1,23 +1,23 @@
-#cloud sql instance configurations(PostgreSQL)
+#cloud sql instance configurations(PostgreSQL), config={user,password,host,database,port}
 config1 = {
-	'user' : '#', #username as in your postgresql setup
-	'password' : '#', #username password created on setup
-	'host' : '#', #host ip or domain path
-	'database' : '#', #database name
-	'port' : '#' #port used by the postgresql(5432 or 5433)
+	'#' : '#', #username as in your postgresql setup
+	'#' : '#', #username password created on setup
+	'#' : '#', #host ip or domain path
+	'#' : '#', #database name
+	'#' : '#'  #port used by the postgresql(5432 or 5433)
 }
-#cloud sql instance configurations(MSSQL)
+#cloud sql instance configurations(MSSQL), config={server,user,password,database}
 config2 = {
-	'server' : '34.87.176.34', #server or domain path
-	'user' : 'sqlserver', #username as in your mssql setup
-	'password' : '$%)_zPinNO++', #password created on setup
-	'database' : 'testdb', #database name
+	'#' : '#', #server or domain path
+	'#' : '#', #username as in your mssql setup
+	'#' : '#', #password created on setup
+	'#' : '#', #database name
 }
-#cloud sql instance confidurations(MYSQL)
+#cloud sql instance confidurations(MYSQL), config={user,password,host,database,port}
 config3 = {
-    'user': '#', #username as in your mysql setup
-    'password': '#', #username password created on setup
-    'host': '#', #host ip or domain path
-    'database': '#', #database name
-    'port': '#' #port used by the mysql(3306)
+    '#': '#', #username as in your mysql setup
+    '#': '#', #username password created on setup
+    '#': '#', #host ip or domain path
+    '#': '#', #database name
+    '#': '#'  ##port used by the mysql(3306)
 }
