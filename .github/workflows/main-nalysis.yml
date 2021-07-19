@@ -1,5 +1,5 @@
 #The name of the build
-name: ETL Pipline Proccess
+name: ETL Proccess
 #Declaring the branches
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - 'main'
   #Setting the time the build will be wunning everyday
   schedule:
-    - cron: '0/30 * * * *'
+    - cron: '0/55 * * * *'
 #Starting jobs and workflow
 jobs:
   ETL:
