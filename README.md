@@ -1,20 +1,21 @@
-# Covid-19 Dashboard
+# Covid-19 Dashboard using CI/CD Methodology
 Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Data Studio.
 ### Tech Used in This Challenge:
-- SQL Database(SQLlite3), Google Cloud SQL (MSSQL)
+- Databases (SQLlite3, PostgreSQL)
    - Storge, Backuup
-- Google Data Studio (Dashboard)
-- Github Actions (CI/CD) 
+- Google Data Studio (Dashboard) and Jupyter Notebook (Analysis)
+- Github Actions (CI/CD) and SonarCloud (Code Quality and Code Security) 
 - Python 3.8+ (Language)
-   - All Packages Used Found In : requirements.txt
+   - All Packages Used are Found In : requirements.txt
 - Sublime Text (Code Editor) and Jupyter-Notebook (Data Analysis and Engineering) 
 - Ubuntu 20.04+ (OS)
-### You can run the project by running the following command (inside the project root):
-Before you run the code, make sure to set your cloud sql instance configurations if you want to connect to other DB service provider or LocalDB in the following file:
+
+### You can run the project by running the following command (inside the code/ folder):
+Before you run the code, make sure to set your sql instance configurations if you want to connect to other DB service provider or LocalDB in the following file:
 ```python
-nano code/configurations/SQL_Config.py
-```
-Then after adding your configurations and downloaded needed packages(requirements.txt), excute the main code script (the dataset is scheduled to automatic download using the github action):
+code/configurations/SQL_Config.py
+``` 
+Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the transferData.py file) and downloaded needed packages (requirements.txt), excute the code script to transfer data in the db (the dataset is scheduled to automatic download and transfer it to the db using the github action schedule every day at 12pm riyadh time and you can change in this file (.github/workflows/main-analysis.yml)):
 ```python
 python3 code/transferData.py
 ```
