@@ -7,7 +7,7 @@ on:
       - 'main'
   #Setting the time the build will be wunning everyday
   schedule:
-    - cron: '0/55 * * * *'
+    - cron: '55 * * * *'
 #Starting jobs and workflow
 jobs:
   ETL:
