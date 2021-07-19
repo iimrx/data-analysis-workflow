@@ -1,6 +1,7 @@
+# config = {user,password,host,database,port}
 config ={
-    'user': '#',
-    'password': '#',
-    'host': '#',
-    'database': '#'
+    '#': '#',
+    '#': '#',
+    '#': '#',
+    '#': '#'
 }
