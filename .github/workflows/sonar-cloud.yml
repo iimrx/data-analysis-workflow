@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: SonarCloud Scan - Analyzing the Code
         uses: SonarSource/sonarcloud-github-action@v1.6
         env:
