@@ -32,13 +32,10 @@ try:
 except Exception as e: #if the wrangling proccess didn't work, will print error message
     print(f'Error while wrangling the data!\n\n{e}')
 
-try:
-    #now lets save our new dataset to its path,
-    #checking if the folder exists to overright or create new
-    save_loc = './datasets/created/ksa.csv' #path to the file
-    data.to_csv(save_loc, index=False)
-    print('Dataset File Saved!')
-except: #if the file not exists well create new file
-    if not os.path.exists(save_loc): #checking for the file
-        os.mkdir(save_loc) #if not create new
-    ksa.to_csv(save_loc, index=False) #save
+#checking if the folder exists to overwrite or create new
+save_loc = './datasets/created/ksa.csv' #path to the file
+if not os.path.exists(save_loc): #checking for the file
+    os.mkdir(save_loc) #if not create new
+#now lets save our new dataset to its path,
+data.to_csv(save_loc, index=False) #save
+print('Dataset File Saved!')

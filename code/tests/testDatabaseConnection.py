@@ -3,12 +3,12 @@ try:
     import csv
     import pandas as pd
     import mysql.connector as conn
-    from testConfig import *
+    from testConfig import config
 except Exception as e:
     print(f'error while importing packages!\n {e}')
 
 #creating connection and configuration
-dbConnection = conn.connect(**config)
+dbConnection = conn.connect(**)
 #init the cursor
 cursor = dbConnection.cursor()
 #check if connection established!
@@ -21,8 +21,8 @@ try:
     cursor.execute("CREATE TABLE IF NOT EXISTS corona_analysis (iso_code VARCHAR(50), continent VARCHAR(50), location VARCHAR(50), date DATE, total_cases INT(100) NULL, new_cases INT(100) NULL, total_deaths INT(100) NULL, new_deaths INT(100) NULL, icu_patients INT(100) NULL, new_tests INT(100) NULL, total_tests INT(100) NULL, positive_rate INT(100) NULL, total_vaccinations INT(100) NULL, people_vaccinated INT(100) NULL, people_fully_vaccinated INT(100) NULL, new_vaccinations INT(100) NULL, population INT(100) NULL);")
     end   = time.time()
     print(f'[✔] finished checking/creating!\ntime to create/check: {round(end-start, 2)} sec\n')
-except:
-    print('[💣] error while creating the table!')
+except Exception as e:
+    print(f'[💣] error while creating the table! \n{e}')
 
 #Inserting to the table
 try:

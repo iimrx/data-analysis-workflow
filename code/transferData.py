@@ -3,71 +3,66 @@ import pandas as pd
 import sqlite3 as conn
 from ETL import data
 
-def DBConnect():
+def db_connect():
     #creating connection, configuration and initializing the cursor
-    global cursor, DBconnection #making the cursor global for other functions
-    DBconnection  = conn.connect('./database/coronadb.db',timeout=10) #connect to sqlite3 and create db if not exists with timeout=10 sec
-    cursor = DBconnection.cursor()
+    global cursor, connect_db #making the cursor global for other functions
+    connect_db  = conn.connect('./database/coronadb.db',timeout=10) #connect to sqlite3 and create db if not exists with timeout=10 sec
+    cursor = connect_db.cursor()
     #check if connection established!
-    print(f'[🔥] Connecting to Database ... \n{DBconnection}\
+    print(f'[🔥] Connecting to Database ... \n{connect_db}\
           \n[✔] Connected Successfully!\n')
 
-def CreateTable():
+def create_table():
     try:
         #creating database table and calc time of excution
-        startCreate = time.time()
+        start_create = time.time()
         print('[🔥] Checking if table exists or creating one ...')
-        TBquery = "CREATE TABLE IF NOT EXISTS coviddata({})".format(' ,'.join(data.columns))
-        cursor.execute(TBquery)
-        endCreate   = time.time()
-        print(f'[✔] Finished creating Table: coviddata!\nTime to create/check Table: {round(endCreate-startCreate, 2)} sec\n')
-    
-    except:
-        pass
-        print('[!] Table: coviddata exists so not created!\n')
-
-def CreateUniqueIndex():
-    try:
-        #creating database table and calc time of excution
-        startCreate = time.time()
-        print('[🔥] Creating UNIQUE Index by Date ...')
-        TBquery = "CREATE UNIQUE INDEX idx_coviddata_date ON coviddata (date)"
-        cursor.execute(TBquery)
-        endCreate   = time.time()
-        print(f'[✔] Finished Unique Index!\nTime to create/check Index: {round(endCreate-startCreate, 2)} sec\n')
+        tb_query = "CREATE TABLE IF NOT EXISTS coviddata({})".format(' ,'.join(data.columns))
+        cursor.execute(tb_query)
+        end_create   = time.time()
+        print(f'[✔] Finished creating Table: coviddata!\nTime to create/check Table: {round(end_create-start_create, 2)} sec\n')
     
     except Exception as e:
-        pass
-        print('[!] Index: error while making UNIQUE INDEX!')
-        print(e)
+        print(f'[!] Table: coviddata exists so not created!\n{e}\n')
 
-def InsertData():
+def create_unique_index():
+    try:
+        #creating database table and calc time of excution
+        start_create = time.time()
+        print('[🔥] Creating UNIQUE Index by Date ...')
+        tb_index = "CREATE UNIQUE INDEX idx_coviddata_date ON coviddata (date)"
+        cursor.execute(tb_index)
+        end_create   = time.time()
+        print(f'[✔] Finished Unique Index!\nTime to create/check Index: {round(end_create-start_create, 2)} sec\n')
+    
+    except Exception as e:
+        print(f'[!] Index: error while making UNIQUE INDEX!\n{e}\n')
+
+def insert_data():
     try:
         #Inserting to the table we inserted before!
-        sqlInsert = "REPLACE INTO coviddata ({}) VALUES ({})".format(' ,'.join(data.columns), ','.join(['?']*len(data.columns)))
+        sql_insert = "REPLACE INTO coviddata ({}) VALUES ({})".format(' ,'.join(data.columns), ','.join(['?']*len(data.columns)))
         print('\n[🔥] Inserting to Database Table in Process ...!')
-        startInsert = time.time()
+        start_insert = time.time()
 
         for row in data.iterrows():
-            startInsertRow = time.time()
+            start_insert_row = time.time()
             print(f'[🔥] Inserting Row Data ...\n{row}\n')
-            cursor.execute(sqlInsert, tuple(row[1]))
-            endInsertRow = time.time()
-            print(f'[✔] Finished inserting!\nTime to insert row data: {round(endInsertRow-startInsertRow, 2)} sec\n')
+            cursor.execute(sql_insert, tuple(row[1]))
+            end_insert_row = time.time()
+            print(f'[✔] Finished inserting!\nTime to insert row data: {round(end_insert_row-start_insert_row, 2)} sec\n')
 
-        endInsert  = time.time()
-        print(f'[✔] Finished inserting all Data to the Database Table!\nTime to insert all data: {round(endInsert-startInsert, 2)} sec\n')
+        end_insert  = time.time()
+        print(f'[✔] Finished inserting all Data to the Database Table!\nTime to insert all data: {round(end_insert-start_insert, 2)} sec\n')
         print('[✔] Process Done!')
         
     except Exception as e:
-        pass
-        print('[!] Table: Cant Insert Data to the Table covidtest!\n')
-        print(e)
+        print(f'[!] Table: Cant Insert Data to the Table covidtest!\n{e}\n')
 
     #Closing connection and commits
-    DBconnection.commit()
+    connect_db.commit()
     cursor.close()
-    DBconnection.close()
+    connect_db.close()
 
 #excuting all functions results!
-DBConnect(),CreateTable(),CreateUniqueIndex(),InsertData()
+db_connect(),create_table(),create_unique_index(),insert_data()
