@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - 'main'
+  #Setting the time the build will be wunning everyday
+  schedule:
+    - cron: '45 * * * *'
 #Starting jobs and workflow
 jobs:
   SonarCloud:
