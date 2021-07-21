@@ -5,7 +5,6 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=security_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
-
 # Covid-19 Dashboard using CI/CD Methodology
 Self Challenge To Build Dashboard for Covid-19 and Analyzing it using Google Data Studio.
 ### Tech Used in This Challenge:
