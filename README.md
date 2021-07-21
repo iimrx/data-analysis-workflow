@@ -1,6 +1,7 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=code_smells)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=bugs)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=security_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
