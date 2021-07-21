@@ -6,7 +6,7 @@ from ETL import data
 def db_connect():
     #creating connection, configuration and initializing the cursor
     global cursor, connect_db #making the cursor global for other functions
-    connect_db  = conn.connect('./database/coronadb.db',timeout=10) #connect to sqlite3 and create db if not exists with timeout=10 sec
+    connect_db  = conn.connect('./database/db/coronadb.db',timeout=10) #connect to sqlite3 and create db if not exists with timeout=10 sec
     cursor = connect_db.cursor()
     #check if connection established!
     print(f'[🔥] Connecting to Database ... \n{connect_db}\
