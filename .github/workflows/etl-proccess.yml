@@ -29,9 +29,8 @@ jobs:
     #Running the ETL script to install and update the data as structured,
     #then transfer it to the database
     - name: Running the ETL and TL
-      run: |
-        python ./code/ETL.py
-        python ./code/transferData.py
+      run: ./converter.sh
+
     #Commiting files after updating the dataset
     - name: Commit data to the Repo
       run: |
