@@ -27,15 +27,14 @@ Then after adding your configurations (Or if you want to use SQLite3 as your sto
 
 Also github actions are connected to sonarcloud for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on the SonarCloud (Quality Gate) it will not pushed to the next step on the pipline and this makes the proccess of catching errors more easy and fun!
 
-##### To run the project first, make sure to run the following command to install and save the data to the dataset folder , also make sure you are in the right path (cd code/) then run this command:
+### To run the project first, make sure to run the following command to install and save the data to the dataset folder , also make sure you are in the right path (cd code/) then run this command:
 ```python
 python3 code/etl_data.py
 ```
-##### Know we have the dataset and we are ready know to import the data into our database, by running the following command:
+### Now we have the dataset and we are ready know to import the data into our database, by running the following command:
 ```python
 python3 code/transfer_data.py
 ```
-##### Thanks for Reading ...!
 
 ### Link To The Dashboard:
 <table class="tg">
