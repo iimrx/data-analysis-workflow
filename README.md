@@ -41,9 +41,9 @@ python3 code/etl_data.py
 python3 code/transfer_data.py
 ```
 
-### Finally, you can automate the proccess by running a shell script to automatically run both file codes and create sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated sql file (make sure you make the shell file excutable by using this command: chmod +x converter.sh) by running the following command:
+### Finally, you can automate the proccess by running a shell script to automatically run both file codes and create sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated sql file (make sure you make the shell file excutable by using this command: chmod +x esc.sh) by running the following command:
 ```python
-./converter.sh
+./esc.sh
 ```
 
 ### Link To The Dashboard & Blog Post:
