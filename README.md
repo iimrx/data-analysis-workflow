@@ -6,8 +6,9 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=security_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
-# Covid-19 Dashboard using CI/CD Methodology
-Side Project to Build Dashboard for Covid-19 and Analyzing it using Google Data Studio.
+# Dashboard using CI/CD and Containerization Methodology
+Side Project to Automate the Proccess of Data Extraction, Transformation, Loading and importing it into DB, to Build a Dashboard for Covid-19 and Analyzing it using Google Data Studio with Our Automated Data.
+
 ### Tech Used in This Project:
 - Databases (SQLlite3, PostgreSQL)
    - Storge, Backuup
@@ -31,9 +32,15 @@ Also github actions are connected to sonarcloud for code security and code quali
 ```python
 python3 code/etl_data.py
 ```
-### Now we have the dataset and we are ready know to import the data into our database, by running the following command:
+
+### We have the dataset and we are ready now to import the data into our database, by running the following command:
 ```python
 python3 code/transfer_data.py
+```
+
+### Finally, you can automate the proccess by running the shell script to automatically run both file codes and created sql file in case you have another db to import to it, without needing to take the same proccess to insert tha data and you just have to import into the database generated sql file (make sure you make the shell file excutable by using: chmod +x converter.sh) by running the following command:
+```python
+./converter.sh
 ```
 
 ### Link To The Dashboard:
