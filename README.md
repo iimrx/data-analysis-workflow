@@ -17,14 +17,17 @@ Side Project to Automate the Proccess of Data Extraction, Transformation, Loadin
 - Python 3.8+ (Language)
    - All Packages Used are Found In : requirements.txt
 - Sublime Text (Code Editor) and Jupyter-Notebook (Data Analysis and Engineering) 
-- Ubuntu 20.04+ (OS)
+- Containerization (Docker, Docker Compose)
+   - Containerizing, Configuration of Multi-Containers
+- Ubuntu 20.04+ (OS) 
+   - Local Laptop, Docker Image
 
 ### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
 Before you run the code, make sure to set your sql instance configurations if you want to connect to other DB service provider or LocalDB (Like PostgreSQL/MySQL/MSSQL) in the following file:
 ```python
 code/configurations/SQL_Config.py
 ``` 
-Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the transferData.py file) and downloaded needed packages (requirements.txt), excute the code script to import data on the database (the dataset is scheduled to be automaticly downloaded and transfered to the database using github actions schedule for every 40min ksa/riyadh time and you can change in this file (.github/workflows/main-analysis.yml)). 
+Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the transferData.py file) and downloaded needed packages (requirements.txt), excute the code script to import data into the database (the dataset is scheduled to be automaticly downloaded and transfered to the database using github actions schedule for every 40min ksa/riyadh time and you can change in this file (.github/workflows/main-analysis.yml)). 
 
 Also github actions are connected to sonarcloud for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on the SonarCloud (Quality Gate) it will not pushed to the next step on the pipline and this makes the proccess of catching errors more easy and fun!
 
@@ -38,23 +41,31 @@ python3 code/etl_data.py
 python3 code/transfer_data.py
 ```
 
-### Finally, you can automate the proccess by running the shell script to automatically run both file codes and created sql file in case you have another db to import to it, without needing to take the same proccess to insert tha data and you just have to import into the database generated sql file (make sure you make the shell file excutable by using: chmod +x converter.sh) by running the following command:
+### Finally, you can automate the proccess by running a shell script to automatically run both file codes and create sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated sql file (make sure you make the shell file excutable by using this command: chmod +x converter.sh) by running the following command:
 ```python
 ./converter.sh
 ```
 
-### Link To The Dashboard:
+### Link To The Dashboard & Blog Post:
 <table class="tg">
   <tr>
     <th class="tg-yw4l"><b>Name</b></th>
     <th class="tg-yw4l"><b>Description</b></th>
     <th class="tg-yw4l"><b>Link</b></th>
   </tr>
-  
+  <!-- Dashboard Links -->
   <tr>
     <td class="tg-yw4l">Covid Dashboard</td>
     <td class="tg-yw4l">Dashboard of Saudi Arabia Cases and vaccinations rates in real-time</td>
     <td class="tg-yw4l">Dashboard<a href="#">
+      <p>#</p>
+    </a></td>
+  </tr>
+  <!-- Blog Post Links -->
+  <tr>
+    <td class="tg-yw4l">Blog Post</td>
+    <td class="tg-yw4l">Blog Post on How to Setup Automation ETL Proccess for Data Analysis</td>
+    <td class="tg-yw4l">Blog<a href="#">
       <p>#</p>
     </a></td>
   </tr>
