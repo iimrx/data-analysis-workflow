@@ -22,6 +22,7 @@ Side Project to Automate the Proccess of Data Extraction, Transformation, Loadin
 - Ubuntu 20.04+ (OS) 
    - Local Laptop, Docker Image
 
+# Automating ETL Process
 ### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
 Before you run the code, make sure to set your sql instance configurations if you want to connect to other DB service provider or LocalDB (Like PostgreSQL/MySQL/MSSQL) in the following file:
 ```python
@@ -45,6 +46,11 @@ python3 code/transfer_data.py
 ```python
 ./esc.sh
 ```
+
+# Containerization Process
+If you wanna to use containers as your lab, test or even for developing analysis solution (like in example predicting next week rates and cases based on the data you have automated), you can use docker containers to run isolated environment for you to work on.
+
+In this project i have used Dockerfile (found it on the root folder) to configure the installation of jupyter-lab and python3 with requirements packages (also found it on the root folder), and used docker-compose to install and configure multiple-containers (3 isolated containers with different purposes) to handle our backup database (PostgreSQL), Adminstration Console (pgAdmin) and NoteBook (Jupyter-lab).
 
 ### Link To The Dashboard & Blog Post:
 <table class="tg">
