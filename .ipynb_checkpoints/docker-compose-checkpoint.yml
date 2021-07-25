@@ -27,6 +27,8 @@ services:
     build: .
     ports:
       - "8888:8888"
+    volumes:
+      - notebooks:/var/lib/notebooks
 volumes:
   db-data:
   pgadmin-data:
