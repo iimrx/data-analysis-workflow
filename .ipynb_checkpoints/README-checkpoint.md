@@ -82,7 +82,7 @@ And we gonna see that a new proccess is running and installing all needed images
 docker-compose ps
 ```
 
-# Links To The Dashboard & Blog Post:
+# Link To The Dashboard:
 <table class="tg">
   <tr>
     <th class="tg-yw4l"><b>Name</b></th>
