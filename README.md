@@ -9,17 +9,17 @@
 # Dashboard using CI/CD, Docker and SonarCloud
 Side Project to Automate and Containerize the Proccess of Data Extraction, Transformation, Loading and importing it into Database, to Build a Dashboard for Covid-19 and Analyzing it using Google Data Studio with Our Automated Data.
 
-### Tech Used in This Project:
+### Used in This Project:
 - Databases (SQLlite3, PostgreSQL)
    - Storge, Backuup
 - Google Data Studio (Dashboard) and Jupyter Notebook (Analysis)
 - Github Actions (CI/CD) and SonarCloud (Code Quality and Code Security) 
-- Python 3.8+ (Language)
+- Python 3.8+ (App Language)
    - All Packages Used are Found In : requirements.txt
 - Sublime Text (Code Editor) and Jupyter-Notebook (Data Analysis and Engineering) 
 - Containerization (Docker, Docker Compose)
-   - Containers, Multi-Containers
-- Ubuntu 20.04+ (OS) 
+   - <a href="https://hub.docker.com/_/ubuntu">Ubunut 20.04 LTS</a>, <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a>, <a href="https://hub.docker.com/_/postgres">PostgreSQL</a>
+- Ubuntu 20.04 LTS (OS) 
    - Local PC, Docker Image
 
 # Automating ETL Process
