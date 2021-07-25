@@ -6,8 +6,8 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=security_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
-# Dashboard using CI/CD and Containerization Methodology
-Side Project to Automate the Proccess of Data Extraction, Transformation, Loading and importing it into DB, to Build a Dashboard for Covid-19 and Analyzing it using Google Data Studio with Our Automated Data.
+# Dashboard using CI/CD, Docker and SonarCloud
+Side Project to Automate and Containerize the Proccess of Data Extraction, Transformation, Loading and importing it into Database, to Build a Dashboard for Covid-19 and Analyzing it using Google Data Studio with Our Automated Data.
 
 ### Tech Used in This Project:
 - Databases (SQLlite3, PostgreSQL)
@@ -18,12 +18,12 @@ Side Project to Automate the Proccess of Data Extraction, Transformation, Loadin
    - All Packages Used are Found In : requirements.txt
 - Sublime Text (Code Editor) and Jupyter-Notebook (Data Analysis and Engineering) 
 - Containerization (Docker, Docker Compose)
-   - Containerizing, Configuration of Multi-Containers
+   - Containers, Multi-Containers
 - Ubuntu 20.04+ (OS) 
-   - Local Laptop, Docker Image
+   - Local PC, Docker Image
 
 # Automating ETL Process
-### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
+#### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
 Before you run the code, make sure to set your sql instance configurations if you want to connect to other DB service provider or LocalDB (Like PostgreSQL/MySQL/MSSQL) in the following file:
 ```python
 code/configurations/SQL_Config.py
@@ -32,17 +32,17 @@ Then after adding your configurations (Or if you want to use SQLite3 as your sto
 
 Also github actions are connected to sonarcloud for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on the SonarCloud (Quality Gate) it will not pushed to the next step on the pipline and this makes the proccess of catching errors more easy and fun!
 
-### To run the project first, make sure to run the following command to install and save the data to the dataset folder , also make sure you are in the right path (cd code/) then run this command:
+#### To run the project first, make sure to run the following command to install and save the data to the dataset folder , also make sure you are in the right path (cd code/) then run this command:
 ```python
 python3 code/etl_data.py
 ```
 
-### We have the dataset and we are ready now to import the data into our database, by running the following command:
+#### We have the dataset and we are ready now to import the data into our database, by running the following command:
 ```python
 python3 code/transfer_data.py
 ```
 
-### Finally, you can automate the proccess by running a shell script to automatically run both file codes and create sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated sql file (make sure you make the shell file excutable by using this command: chmod +x esc.sh) by running the following command:
+#### Finally, you can automate the proccess by running a shell script to automatically run both file codes and create sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated sql file (make sure you make the shell file excutable by using this command: chmod +x esc.sh) by running the following command:
 ```python
 ./esc.sh
 ```
@@ -52,7 +52,7 @@ If you wanna to use containers as your lab, test or even for developing analysis
 
 In this project i have used Dockerfile (found it on the root folder) to configure the installation of jupyter-lab and python3 with requirements packages (also found it on the root folder), and used docker-compose to install and configure multiple-containers (3 isolated containers with different purposes) to handle our backup database (PostgreSQL), Adminstration Console (pgAdmin) and NoteBook (Jupyter-lab).
 
-### Link To The Dashboard & Blog Post:
+# Links To The Dashboard & Blog Post:
 <table class="tg">
   <tr>
     <th class="tg-yw4l"><b>Name</b></th>
