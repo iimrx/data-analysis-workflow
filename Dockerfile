@@ -17,4 +17,4 @@ RUN ./esc.sh
 # Exposing ports for the notebook.
 EXPOSE 8888
 # Start the notebook in the end.
-CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=*", "--allow-root","--NotebookApp.token=''","--NotebookApp.password=''"]
+CMD ["jupyter", "lab", "--port=*", "--no-browser", "--ip=*", "--allow-root","--NotebookApp.token=''","--NotebookApp.password=''"]
