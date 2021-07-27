@@ -31,5 +31,4 @@ services:
       - notebooks:/var/lib/notebooks
 volumes:
   db-data:
-  notebooks:
   pgadmin-data:
