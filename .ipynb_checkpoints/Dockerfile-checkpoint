@@ -8,7 +8,7 @@ RUN python3 -m pip install --upgrade pip
 # Here we create new directory and copy all files to it.
 RUN mkdir /app
 WORKDIR /app
-COPY . .
+COPY . ./app
 # Now we install needed packages for project to work (db,jupyter and scripts).
 RUN pip3 install -r requirements.txt
 # Now we run the automation shell inside the isolated container.

@@ -3,6 +3,7 @@ services:
   pgadmin:
     container_name: "PgADmin"
     image: 'dpage/pgadmin4:latest'
+    restart: always
     ports:
       - "80:80"
     environment:
@@ -13,6 +14,7 @@ services:
   postgresql:
     container_name: "PostgreSQL"
     image: 'postgres:12.7'
+    restart: always
     ports:
       - "5433:5433"
     environment:
@@ -25,11 +27,37 @@ services:
   jupyter:
     container_name: "JupyterLab"
     build: .
+    restart: always
     ports:
       - "8888:8888"
     volumes:
-      - notebooks:/var/lib/notebooks
+      - notebooks-data:/var/lib/notebooks
+  superset:
+    container_name: "Superset"
+    image: 'tylerfowler/superset'
+    restart: always
+    ports:
+      - '8088:8088'
+      - '5555:5555'
+    depends_on:
+      - postgresql
+    adminUser:
+      - username: admin
+      - firstname: Abdulrazak
+      - lastname: Osman
+      - email: zaak0101@hotmail.com
+      - password: Zaak1234@
+  minio:
+    container_image: "MinIO"
+    image: 'minio'
+    restart: always
+    ports:
+      - '9000:9000'
+    volumes:
+      - minio-data:/data
+    command:
+      - server /data
 volumes:
   db-data:
-  notebooks:
   pgadmin-data:
+  minio-data:
