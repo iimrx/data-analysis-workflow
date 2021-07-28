@@ -9,18 +9,20 @@
 # Dashboard using CI/CD, Docker and SonarCloud
 Side project to automate and containerize the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with Our Automated Data.
 
-### Used in This Project:
-- Databases (SQLlite3, PostgreSQL(Heroku)) 
-   - Storage, Backup
-- <a href="https://superset.apache.org/">Superset</a> (Dashboard/Report) and JupyterLab (Analysis)
-- Github Actions (CI/CD) and <a href="https://sonarcloud.io/">SonarCloud</a> (Code Quality and Code Security) 
-- Python 3.8+ (App Language)
-   - All Packages Used are Found In : requirements.txt
-- Sublime Text (Code Editor) and JupyterLab (Data Analysis and Engineering) 
+### Used in this project:
+- <a href="https://ubuntu.com/">Ubuntu</a> 20.04 LTS (OS) on local and inside containers
+- <a href="https://sqlite.org/index.html">SQLlite3</a> (Storage)
+- <a href="https://www.postgresql.org/">PostgreSQL</a> on Heroku (Backup)
+- <a href="https://superset.apache.org/">Superset</a> (Dashboards and Reports)
+- <a href="https://pypi.org/project/jupyterlab/">JupyterLab</a> (Data Analysis and Engineering)
+- <a href="https://github.com/features/actions">Github Actions</a> (CI/CD)
+- <a href="https://sonarcloud.io/">SonarCloud</a> (Code Quality and Code Security) 
+- <a href="https://www.python.org/downloads/">Python 3.8+</a> (Programming language) and all packages used are found in : requirements.txt
+- <a href="https://www.sublimetext.com/">Sublime Text</a> (Code Editor) 
 - Containerization (Docker, Docker Compose)
-   - <a href="https://hub.docker.com/_/ubuntu">Ubunut 20.04 LTS</a>, <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a>, <a href="https://hub.docker.com/_/postgres">PostgreSQL</a>
-- Ubuntu 20.04 LTS (OS) 
-   - Local PC, Docker Image
+   - <a href="https://hub.docker.com/_/ubuntu">Ubunut 20.04 LTS</a> (OS)
+   - <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a> (DBA)
+   - <a href="https://hub.docker.com/_/postgres">PostgreSQL</a> (DB)
 
 # Automating ETL Process
 #### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
@@ -30,7 +32,7 @@ code/configurations/SQL_Config.py
 ``` 
 Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the transferData.py file) and downloaded needed packages (requirements.txt), excute the code script to import data into the database (the dataset is scheduled to be automaticly downloaded and transfered to the database using github actions schedule for every 40min ksa/riyadh time and you can change in this file (.github/workflows/main-analysis.yml)). 
 
-Also github actions are connected to sonarcloud for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on the SonarCloud (Quality Gate) it will not pushed to the next step on the pipline and this makes the proccess of catching errors more easy and fun!
+Also github actions are connected to sonarcloud for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on the SonarCloud (Quality Gate) it will not pushed to the next step on the pipline and this makes the proccess of catching errors more easy and fun!.
 
 #### To run the project first, make sure to run the following command to install and save the data to the dataset folder , also make sure you are in the right path (cd code/) then run this command:
 ```python
