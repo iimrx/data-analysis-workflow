@@ -26,12 +26,14 @@ services:
       - db-data:/var/lib/postgresql/data
   jupyter:
     container_name: "JupyterLab"
-    build: .
+    image: 'jupyter/minimal-notebook'
     restart: always
     ports:
-      - "8888:8888"
+      - "8889:8889"
+    environment:
+      JUPYTER_ENABLE_LAB: yes
     volumes:
-      - notebooks-data:/var/lib/notebooks
+      - notebooks-data:/notebooks
   superset:
     container_name: "Superset"
     image: 'tylerfowler/superset'
@@ -61,3 +63,4 @@ volumes:
   db-data:
   pgadmin-data:
   minio-data:
+  notebooks-data:
