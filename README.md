@@ -11,6 +11,7 @@ Project to automate and containerize the proccess of data extraction, transforma
 
 ### Topics:
 - <a href="#automating-etl-process">Data Automation Process</a>
+- <a href="#containerization-process">Containerization Workflow Process</a>
 
 ### Used in this project:
 - <a href="https://ubuntu.com/">Ubuntu</a> 20.04 LTS (OS) on local and inside containers
