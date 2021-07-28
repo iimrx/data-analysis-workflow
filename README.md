@@ -10,7 +10,6 @@
 Project focuss on automating and containerizing the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
 
 ### Topics:
-- <a href="#link-to-the-dashboard">Dashboard</a>
 - <a href="#automating-etl-process">Data Automation Process</a>
 - <a href="#containerization-process">Containerization Workflow Process</a>
 
