@@ -7,7 +7,7 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
 # Dashboard using CI/CD, Docker and SonarCloud
-Side project to automate and containerize the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with Our Automated Data.
+Side project to automate and containerize the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
 
 ### Used in this project:
 - <a href="https://ubuntu.com/">Ubuntu</a> 20.04 LTS (OS) on local and inside containers
@@ -17,12 +17,11 @@ Side project to automate and containerize the proccess of data extraction, trans
 - <a href="https://pypi.org/project/jupyterlab/">JupyterLab</a> (Data Analysis and Engineering)
 - <a href="https://github.com/features/actions">Github Actions</a> (CI/CD)
 - <a href="https://sonarcloud.io/">SonarCloud</a> (Code Quality and Code Security) 
-- <a href="https://www.python.org/downloads/">Python 3.8+</a> (Programming language) and all packages used are found in : requirements.txt
+- <a href="https://www.python.org/downloads/">Python 3.8+</a> (Programming language)
 - <a href="https://www.sublimetext.com/">Sublime Text</a> (Code Editor) 
 - Containerization (Docker, Docker Compose)
    - <a href="https://hub.docker.com/_/ubuntu">Ubunut 20.04 LTS</a> (OS)
-   - <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a> (DBA)
-   - <a href="https://hub.docker.com/_/postgres">PostgreSQL</a> (DB)
+   - <a href="https://hub.docker.com/_/postgres">PostgreSQL</a> (DB), <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a> (DBA)
 
 # Automating ETL Process
 #### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
