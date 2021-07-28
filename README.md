@@ -6,8 +6,8 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=security_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
-# Dashboard using CI/CD, Docker and SonarCloud
-Project focuss on automating and containerizing the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
+# Dashboard using CI/CD, Automation, Docker and SonarCloud
+Project focuss on automating and containerizing the proccess of data (extract, transform, load) and importing into our chosen database, to build a dashboard and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
 
 ### Topics:
 - <a href="#automating-etl-process">Data Automation Process</a>
@@ -29,16 +29,16 @@ Project focuss on automating and containerizing the proccess of data extraction,
    - <a href="https://hub.docker.com/_/postgres">PostgreSQL</a> (DB), <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a> (DBA)
 
 # Automating ETL Process
-#### You can run the project by running the following commands (Inside code/ Folder), after reading the requirements here:
+#### You can run the project by running the following commands (Inside 'code/' Folder), after reading the requirements here:
 Before you run the code, make sure to set your sql instance configurations if you want to connect to other DB service provider or LocalDB (Like PostgreSQL/MySQL/MSSQL) in the following file:
 ```python
 code/configurations/SQL_Config.py
 ``` 
-Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the transferData.py file) and downloaded needed packages (requirements.txt), excute the code script to import data into the database (the dataset is scheduled to be automaticly downloaded and transfered to the database using github actions schedule for every 40min ksa/riyadh time and you can change in this file (.github/workflows/main-analysis.yml)). 
+Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the 'transferData.py file') and downloaded needed packages (can found in 'requirements.txt'), excute the code script to import data into the database (also the dataset is scheduled to be automaticly downloaded and transfered to the database using '<b>github actions</b>' schedules for every 40min ksa/riyadh time and you can change it inside the .yml file --> .github/workflows/main-analysis.yml). 
 
-Also github actions are connected to sonarcloud for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on the SonarCloud (Quality Gate) it will not pushed to the next step on the pipline and this makes the proccess of catching errors more easy and fun!.
+Also <b>github actions</b> are connected to <b>sonarcloud</b> for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on <b>SonarCloud (Quality Gate)</b> it will not be pushed to the next step in the pipline and this makes the proccess of catching errors more easy and fun!.
 
-#### To run the project first, make sure to run the following command to install and save the data to the dataset folder , also make sure you are in the right path (cd code/) then run this command:
+#### To run the 'ETL' process, make sure to run the following command to install and save the data to the dataset folder, and make sure you are in the right path (code/):
 ```python
 python3 code/etl_data.py
 ```
@@ -48,7 +48,7 @@ python3 code/etl_data.py
 python3 code/transfer_data.py
 ```
 
-#### Finally, you can automate the proccess by running a shell script to automatically run both file codes and create sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated sql file (make sure you make the shell file excutable by using this command: chmod +x esc.sh) by running the following command:
+#### Finally, you can automate above process by running a shell script to automatically run both files and also create .sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated .sql file (make sure you make the shell file excutable by running: 'chmod +x esc.sh') by running the following command:
 ```python
 ./esc.sh
 ```
