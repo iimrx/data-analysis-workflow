@@ -7,11 +7,13 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
 # Dashboard using CI/CD, Docker and SonarCloud
-Project to automate and containerize the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
+Project focuss on automating and containerizing the proccess of data extraction, transformation, loading and importing it into database, to build a dashboard for covid-19 and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
 
 ### Topics:
+- <a href="#link-to-the-dashboard">Dashboard</a>
 - <a href="#automating-etl-process">Data Automation Process</a>
 - <a href="#containerization-process">Containerization Workflow Process</a>
+
 
 ### Used in this project:
 - <a href="https://ubuntu.com/">Ubuntu</a> 20.04 LTS (OS) on local and inside containers
