@@ -7,7 +7,7 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=code_smells)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=bugs)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
-# Dashboard using CI/CD, Automation, Docker and SonarCloud
+# Building dashboard using CI/CD, Automation, Docker and SonarCloud
 Project focuss on automating and containerizing the proccess of data <b>ETL (extract, transform, load)</b> and importing into our chosen database, to build a dashboard and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
 
 ### Topics:
@@ -30,7 +30,7 @@ Project focuss on automating and containerizing the proccess of data <b>ETL (ext
    - <a href="https://hub.docker.com/_/postgres">PostgreSQL</a> (DB), <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a> (DBA)
 
 # Automating ETL Process
-#### You can run the project by running the following commands (Inside 'code/' Folder), after reading the requirements here:
+You can run the project by running the following commands inside 'code/' folder, after reading the requirements
 Before you run the code, make sure to set your sql instance configurations if you want to connect to other DB service provider or LocalDB (Like PostgreSQL/MySQL/MSSQL) in the following file:
 ```python
 code/configurations/SQL_Config.py
