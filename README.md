@@ -34,9 +34,7 @@ Before you run the code, make sure to set your sql instance configurations if yo
 ```python
 code/configurations/SQL_Config.py
 ``` 
-Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the 'transferData.py file') and downloaded needed packages (can found in 'requirements.txt'), excute the code script to import data into the database. 
-
-<b>github actions</b> are connected to <b>sonarcloud</b> for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on <b>SonarCloud (Quality Gate)</b> it will not be pushed to the next step in the pipline and this makes the proccess of catching errors more easy and fun!.
+Then after adding your configurations (Or if you want to use SQLite3 as your storge db edit/add on the 'transferData.py file') and downloaded needed packages (can found in 'requirements.txt'), excute the code script to import data into the database.
 
 To run the 'ETL' process, make sure to run the following command to install and save the data to the dataset folder, and make sure you are in the right path (code/):
 ```python
@@ -53,19 +51,19 @@ Finally, you can automate above process by running a shell script to automatical
 ./esc.sh
 ```
 
-# CI/CD Process
+# CI/CD Workflow Process
 We automated the process of <b>'ETL'</b> using shell script and it works right? but, we have still need to run it manualy inside <b>'CMD/Terminal'</b> and this makes half of the process are not automated, and here where comes the subject of <b>'CI/CD'</b> were we can create custom <b>'continuous integration (CI)'</b> and <b>'continuous deployment (CD)'</b> workflows directly inside our GitHub repository with <a href="https://github.com/features/actions"><b>GitHub Actions</b></a>.
 
 ### Steps To Use CI/CD:
 - Go to repository > actions > setup python
 - Then copy './github/workflows/etl-proccess.yml' inside your created file
- - Note: make sure you configure as you prefer it to work 
+   - Note: make sure you configure as you prefer it to work 
 - If you want sonarcloud to be your code quality/security chosen tool:
- - create 'sonar-project.properties' file and put your configuration on it
- - copy './github/workflows/sonar-cloud.yml' inside your created file
- - Note: make sure you configure as you prefer it to work
+   - create 'sonar-project.properties' file and put your configuration on it
+   - copy './github/workflows/sonar-cloud.yml' inside your created file
+   - Note: make sure you configure as you prefer it to work
  
-After you configure and enable github actions, your 'ETL' process now is compatible with 'CI/CD' and the dataset is scheduled to be automaticly downloaded and transfered to the databasefor every 40min <b>'ksa/riyadh'</b> time and after it completed 5min later sonarcloud scan runs and checks the code.
+After you configure and enable github actions, your 'ETL' process now is compatible with 'CI/CD' and the dataset is scheduled to be automaticly downloaded and transfered to the databasefor every 40min <b>'ksa/riyadh'</b> time and after it completed 5min later sonarcloud scan runs and checks the code security and code quality.
 
 # Containerization Process
 If you wanna to use containers as your lab, test or even for developing analysis solution (like in example predicting next week rates and cases based on the data you have automated), you can use docker containers to run isolated environment for you to work on.
