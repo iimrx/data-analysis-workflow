@@ -12,6 +12,7 @@ Project focuss on automating and containerizing the proccess of data <b>ETL (ext
 
 ### Topics:
 - <a href="#automating-etl-process">Data Automation Process</a>
+- <a href="#cicd-workflow-process">CI/CD Workflow Process</a>
 - <a href="#containerization-process">Containerization Workflow Process</a>
 
 ### Used in this project:
@@ -52,18 +53,18 @@ Finally, you can automate above process by running a shell script to automatical
 ```
 
 # CI/CD Workflow Process
-We automated the process of <b>'ETL'</b> using shell script and it works right? but, we have still need to run it manualy inside <b>'CMD/Terminal'</b> and this makes half of the process are not automated, and here where comes the subject of <b>'CI/CD'</b> were we can create custom <b>'continuous integration (CI)'</b> and <b>'continuous deployment (CD)'</b> workflows directly inside our GitHub repository with <a href="https://github.com/features/actions"><b>GitHub Actions</b></a>.
+We automated the process of <b>'ETL'</b> using shell script and it works right? but, we have still need to run it manualy inside <b>'terminal'</b> and this makes half of the process are not automated, and here where comes the subject of <b>'CI/CD'</b> and we can create custom <b>'continuous integration (CI)'</b> and <b>'continuous deployment (CD)'</b> workflows directly inside our GitHub repository with <a href="https://github.com/features/actions"><b>GitHub Actions</b></a>.
 
 ### Steps To Use CI/CD:
 - Go to repository > actions > setup python
 - Then copy './github/workflows/etl-proccess.yml' inside your created file
    - Note: make sure you configure as you prefer it to work 
 - If you want sonarcloud to be your code quality/security chosen tool:
-   - create 'sonar-project.properties' file and put your configuration on it
+   - create 'sonar-project.properties' file and put your configurations on it
    - copy './github/workflows/sonar-cloud.yml' inside your created file
    - Note: make sure you configure as you prefer it to work
  
-After you configure and enable github actions, your 'ETL' process now is compatible with 'CI/CD' and the dataset is scheduled to be automaticly downloaded and transfered to the databasefor every 40min <b>'ksa/riyadh'</b> time and after it completed 5min later sonarcloud scan runs and checks the code security and code quality.
+After you configured and enabled github actions, your 'ETL' process now is compatible with 'CI/CD' and the dataset is scheduled to be automaticly downloaded and transfered to the databasefor every 40min <b>'ksa/riyadh'</b> time and after it completed 5min later sonarcloud scan runs and checks the code security and code quality.
 
 # Containerization Process
 If you wanna to use containers as your lab, test or even for developing analysis solution (like in example predicting next week rates and cases based on the data you have automated), you can use docker containers to run isolated environment for you to work on.
