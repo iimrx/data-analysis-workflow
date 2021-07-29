@@ -1,3 +1,5 @@
+![ETL Workflow](https://github.com/pinocchioVirus/data-analysis-workflow/actions/workflows/etl-proccess.yml/badge.svg)
+![SonarCloud Scan](https://github.com/pinocchioVirus/data-analysis-workflow/actions/workflows/sonar-cloud.yml/badge.svg)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=code_smells)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
@@ -7,12 +9,11 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
 # Dashboard using CI/CD, Automation, Docker and SonarCloud
-Project focuss on automating and containerizing the proccess of data (extract, transform, load) and importing into our chosen database, to build a dashboard and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
+Project focuss on automating and containerizing the proccess of data <b>ETL (extract, transform, load)</b> and importing into our chosen database, to build a dashboard and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
 
 ### Topics:
 - <a href="#automating-etl-process">Data Automation Process</a>
 - <a href="#containerization-process">Containerization Workflow Process</a>
-
 
 ### Used in this project:
 - <a href="https://ubuntu.com/">Ubuntu</a> 20.04 LTS (OS) on local and inside containers
@@ -38,20 +39,22 @@ Then after adding your configurations (Or if you want to use SQLite3 as your sto
 
 Also <b>github actions</b> are connected to <b>sonarcloud</b> for code security and code quality, and scheduled for every 45min which means after 5min from the code is pushed to the repo and makes checks to the whole project, if the code has faild on <b>SonarCloud (Quality Gate)</b> it will not be pushed to the next step in the pipline and this makes the proccess of catching errors more easy and fun!.
 
-#### To run the 'ETL' process, make sure to run the following command to install and save the data to the dataset folder, and make sure you are in the right path (code/):
+To run the 'ETL' process, make sure to run the following command to install and save the data to the dataset folder, and make sure you are in the right path (code/):
 ```python
 python3 code/etl_data.py
 ```
 
-#### We have the dataset and we are ready now to import the data into our database, by running the following command:
+We have the dataset and we are ready now to import the data into our database, by running the following command:
 ```python
 python3 code/transfer_data.py
 ```
 
-#### Finally, you can automate above process by running a shell script to automatically run both files and also create .sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated .sql file (make sure you make the shell file excutable by running: 'chmod +x esc.sh') by running the following command:
+Finally, you can automate above process by running a shell script to automatically run both files and also create .sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated .sql file (make sure you make the shell file excutable by running: 'chmod +x esc.sh') by running the following command:
 ```python
 ./esc.sh
 ```
+
+We automated the process of <b>'ETL'</b> using shell script and it works right? but, we have still need to run it manualy inside <b>'CMD/Terminal'</b> and this makes half of the process are not automated, and here where comes the subject of <b>'CI/CD'</b> were we can create custom <b>'continuous integration (CI)'</b> and <b>'continuous deployment (CD)'</b> workflows directly inside our GitHub repository with <a href="https://github.com/features/actions"><b>GitHub Actions</b></a>.
 
 # Containerization Process
 If you wanna to use containers as your lab, test or even for developing analysis solution (like in example predicting next week rates and cases based on the data you have automated), you can use docker containers to run isolated environment for you to work on.
