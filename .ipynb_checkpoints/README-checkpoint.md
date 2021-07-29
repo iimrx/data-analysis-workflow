@@ -39,15 +39,15 @@ Then after adding your configurations (Or if you want to use SQLite3 as your sto
 
 To run the 'ETL' process, make sure to run the following command to install and save the data to the dataset folder, and make sure you are in the right path (code/):
 ```python
-python3 code/etl_data.py
+python3 etl_data.py
 ```
 
 We have the dataset and we are ready now to import the data into our database, by running the following command:
 ```python
-python3 code/transfer_data.py
+python3 transfer_data.py
 ```
 
-Finally, you can automate above process by running a shell script to automatically run both files and also create .sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated .sql file (make sure you make the shell file excutable by running: 'chmod +x esc.sh') by running the following command:
+Finally, you can automate above process by running a shell script to automatically run both files and also create .sql file in case you have another database to import into it, without needing to take the same proccess to insert data and you just have to import into the database the generated .sql file (make sure you make the shell file excutable by running: 'chmod +x esc.sh') by running the following command from the root folder:
 ```python
 ./esc.sh
 ```
