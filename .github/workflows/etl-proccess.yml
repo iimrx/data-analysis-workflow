@@ -1,5 +1,5 @@
 #The name of the build
-name: ETL/TL Proccess
+name: data workflow
 #Declaring the branches
 on:
   push:
