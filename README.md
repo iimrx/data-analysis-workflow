@@ -1,11 +1,10 @@
-![ETL Workflow](https://github.com/pinocchioVirus/data-analysis-workflow/actions/workflows/etl-proccess.yml/badge.svg)
-![SonarCloud Scan](https://github.com/pinocchioVirus/data-analysis-workflow/actions/workflows/sonar-cloud.yml/badge.svg)
+![](https://img.shields.io/github/repo-size/pinocchiovirus/data-analysis-workflow?label=project%20size)
+![](https://github.com/pinocchioVirus/data-analysis-workflow/actions/workflows/etl-proccess.yml/badge.svg)
+![](https://github.com/pinocchioVirus/data-analysis-workflow/actions/workflows/sonar-cloud.yml/badge.svg)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=security_rating)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=code_smells)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=pinocchioVirus_sideProject&metric=bugs)](https://sonarcloud.io/dashboard?id=pinocchioVirus_sideProject)
 
 # Building dashboard using CI/CD, Automation, Docker and SonarCloud
 Project focuss on automating and containerizing the proccess of data <b>ETL (extract, transform, load)</b> and importing into our chosen database, to build a dashboard and analyzing it using <b>Superset</b> with our <b>Automated Data</b>.
