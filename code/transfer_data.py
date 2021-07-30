@@ -1,7 +1,7 @@
 import time,csv
 import pandas as pd
 import sqlite3 as conn
-from job_seekers import data
+from etl_data import data
 
 def db_connect():
     #creating connection, configuration and initializing the cursor
