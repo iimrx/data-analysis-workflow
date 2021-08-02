@@ -1,9 +1,8 @@
 import time,csv
 import pandas as pd
 import sqlite3 as conn
-# from etl_data import data
+from etl_data import data
 
-data = pd.read_csv('./datasets/created/seekers.csv')
 def db_connect():
     #creating connection, configuration and initializing the cursor
     global cursor, connect_db #making the cursor global for other functions

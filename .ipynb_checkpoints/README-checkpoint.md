@@ -29,13 +29,9 @@ Project focuss on automating and containerizing the proccess of data <b>ETL (ext
 
 <!-- Used Container Images -->
 ### Containers (Docker & Docker Compose) Images
-- <a href="https://hub.docker.com/_/ubuntu">Ubunut</a>
-- <a href="#">JupyterLab</a>
-- <a href="https://hub.docker.com/_/postgres">PostgreSQL</a>
-- <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a>
-- <a href="#">MinIO</a>
-- <a href="#">Superset</a>
-- <a href="#">AirFlow</a>
+- <a href="https://hub.docker.com/_/ubuntu">Ubunut</a>, <a href="#">JupyterLab</a>
+- <a href="https://hub.docker.com/_/postgres">PostgreSQL</a>, <a href="https://hub.docker.com/r/dpage/pgadmin4">pgADmin</a>
+- <a href="#">MinIO</a>, <a href="#">Superset</a>, <a href="#">AirFlow</a>
 
 <!-- Automation Workflow -->
 # Automating ETL Process
