@@ -74,15 +74,15 @@ After you configured and enabled github actions, your 'ETL' process now is compa
 
 <!-- Containerization Workflow -->
 # Containerization Process
-If you wanna to use containers as your lab, test or even for developing analysis solution (like in example predicting next week rates and cases based on the data you have automated), you can use docker containers to run isolated environment for you to work on.
+If you wanna use containers as your labs, environments or even for developing analysis solution (like in example predicting next week rates and cases based on the data you have automated), you can use docker containers to run isolated environments for you to work on.
 
-In this project i have used Dockerfile (found it on the root folder) to configure the installation of jupyter-lab and python3 with requirements packages (also found it on the root folder), and used docker-compose to install and configure multiple-containers (3 isolated containers with different purposes) to handle our backup database (PostgreSQL), Adminstration Console (pgAdmin) and NoteBook (Jupyter-lab).
+In this project i have used `Dockerfile` to configure the installation of only `Ubuntu 20.04 LTS`, `jupyterlab` and `python3` with requirements packages to build isolated environment but this will make our life worse if we need to install other tools and make them communicate together, so i used `docker-compose` to install and configure multiple-containers (`5 isolated containers with different purposes`) to handle our `Database (PostgreSQL)`, `Adminstration (pgAdmin)`, `NoteBook (Jupyterlab)`, Dashborad (Superset) and `Storege (MinIO)` and this makes the process of creating multiple containers on isolated environment and they can communicate and share data between them.
 
-#### In case you need to Containerize your ETL & Analysis Infrastructure with Docker as an isolated environment for analysis or testing etc., make sure you have first installed <a href="https://docs.docker.com/get-docker/"><b>Docker</b></a> and you have also <a href="https://docs.docker.com/compose/install/"><b>Docker Compose</b></a>. Now you are ready to use the project by following next easy steps:
+#### In case you need to Containerize your ETL & Analysis Infrastructure with `Docker/Docker-Compose` as an isolated environment for analysis or testing etc., make sure you have first installed <a href="https://docs.docker.com/get-docker/"><b>Docker</b></a> and you have also <a href="https://docs.docker.com/compose/install/"><b>Docker Compose</b></a>, now you are ready to use the project by following next easy steps:
 
-#### I put two files in the root folder for containerizing the project called "Dockerfile" and  "docker-compose.yml". <b>Dockerfile</b> is handling the process of installing ubuntu image and installs inside the image all jupyterlab prerequisite packages along with all its confirgurations, <b>docker-composer.yml</b> is used to download multi-container applications using <a href="https://hub.docker.com/">DockerHub</a> images and making the process of installing multi-containers with its configuration more easy!.
+#### I put two files in the root folder for containerizing the project called `Dockerfile` and `docker-compose.yml`. <b>Dockerfile</b> is handling the process of installing ubuntu image and installs inside the image all jupyterlab prerequisite packages along with all its confirgurations, <b>docker-composer.yml</b> is used to download multi-container applications using <a href="https://hub.docker.com/">DockerHub</a> images and making the process of installing multi-containers with its configuration more easy!.
 
-After we have maked sure that docker and docker-compose are installed on our machine also up and running, for testing purpose on isolated environment with docker container you can simply run the following command (Inside root directory):
+After we have maked sure that docker and docker-compose are installed on our machine also up and running, for testing purpose on isolated environment with docker container you can simply run the following command (`in the root directory`):
 ```python
 docker build -t testing .
 ```
@@ -94,13 +94,13 @@ Then, after we have installed our container successfully run the following comma
 ```python
 docker run -d -p 8888 testing
 ```
-We have successfully running isolated jupyterlab environment on docker, and can access it using your browser and go to the following path:
+We have successfully running isolated jupyterlab environment on docker, and can access it using your browser and pasting the following:
 ```python
 localhost:8888
 ```
 
 <!-- Implementation of docker-compose -->
-#### After we saw how we can isolate our workflow for mare easy way to work without needing to take care of the environment each and single time, but also there is another way for installing multi-container which is what we need ex: (PostgreSQL, PgAdmin and JupyterLab all together) in this case we gonna use <b>docker-compose</b>, just by running following command:
+#### After we saw how we can isolate our workflow, for more easy way to work without needing to take care of the environment on each and single container, there is another way for installing `multi-container` which is what we need ex: (`PostgreSQL, PgAdmin, JupyterLab, Superset and MinIO all together`) in this case we gonna use <b>docker-compose</b>, just by running following command (`in the root directory`):
 ```python
 docker-compose up -d
 ```
@@ -126,6 +126,6 @@ docker-compose ps
   <tr>
     <td class="tg-yw4l">Covid Dashboard</td>
     <td class="tg-yw4l">Dashboard of Saudi Arabia Cases and Vaccinations Rates</td>
-    <td class="tg-yw4l"><a href="#"><p>Soon</p></a></td>
+    <td class="tg-yw4l"><a href="https://datastudio.google.com/reporting/aa7edb66-7d69-402d-a1ff-6a31f464f974"><p>Job Seekers</p></a></td>
   </tr>
 </table>
