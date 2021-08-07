@@ -119,8 +119,8 @@ docker-compose ps
   </tr>
   <!-- Dashboard Links -->
   <tr>
-    <td class="tg-yw4l">Covid Dashboard</td>
-    <td class="tg-yw4l">Dashboard of Saudi Arabia Cases and Vaccinations Rates</td>
-    <td class="tg-yw4l"><a href="https://datastudio.google.com/reporting/aa7edb66-7d69-402d-a1ff-6a31f464f974"><p>Job Seekers</p></a></td>
+    <td class="tg-yw4l">Job Seekers</td>
+    <td class="tg-yw4l">Dashboard of Saudi Arabia Job Seekers</td>
+    <td class="tg-yw4l"><a href="https://datastudio.google.com/reporting/aa7edb66-7d69-402d-a1ff-6a31f464f974"><p>Dashboard</p></a></td>
   </tr>
 </table>
