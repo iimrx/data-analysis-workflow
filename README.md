@@ -78,9 +78,9 @@ If you wanna use containers as your labs, environments or even for developing an
 
 In this project i have used `Dockerfile` to configure the installation of only `Ubuntu 20.04 LTS`, `jupyterlab` and `python3` with requirements packages to build isolated environment but this will make our life worse if we need to install other tools and make them communicate together, so i used `docker-compose` to install and configure multiple-containers (`5 isolated containers with different purposes`) to handle our `Database (PostgreSQL)`, `Adminstration (pgAdmin)`, `NoteBook (Jupyterlab)`, Dashborad (Superset) and `Storege (MinIO)` and this makes the process of creating multiple containers on isolated environment and they can communicate and share data between them.
 
-#### In case you need to Containerize your ETL & Analysis Infrastructure with `Docker/Docker-Compose` as an isolated environment for analysis or testing etc., make sure you have first installed <a href="https://docs.docker.com/get-docker/"><b>Docker</b></a> and you have also <a href="https://docs.docker.com/compose/install/"><b>Docker Compose</b></a>, now you are ready to use the project by following next easy steps:
+In case you need to Containerize your ETL & Analysis Infrastructure with `Docker/Docker-Compose` as an isolated environment for analysis or testing etc., make sure you have first installed <a href="https://docs.docker.com/get-docker/"><b>Docker</b></a> and you have also <a href="https://docs.docker.com/compose/install/"><b>Docker Compose</b></a>, now you are ready to use the project by following next easy steps:
 
-#### I put two files in the root folder for containerizing the project called `Dockerfile` and `docker-compose.yml`. <b>Dockerfile</b> is handling the process of installing ubuntu image and installs inside the image all jupyterlab prerequisite packages along with all its confirgurations, <b>docker-composer.yml</b> is used to download multi-container applications using <a href="https://hub.docker.com/">DockerHub</a> images and making the process of installing multi-containers with its configuration more easy!.
+I put two files in the root folder for containerizing the project called `Dockerfile` and `docker-compose.yml`. <b>Dockerfile</b> is handling the process of installing ubuntu image and installs inside the image all jupyterlab prerequisite packages along with all its confirgurations, <b>docker-composer.yml</b> is used to download multi-container applications using <a href="https://hub.docker.com/">DockerHub</a> images and making the process of installing multi-containers with its configuration more easy!.
 
 After we have maked sure that docker and docker-compose are installed on our machine also up and running, for testing purpose on isolated environment with docker container you can simply run the following command (`in the root directory`):
 ```python
@@ -100,7 +100,7 @@ localhost:8888
 ```
 
 <!-- Implementation of docker-compose -->
-#### After we saw how we can isolate our workflow, for more easy way to work without needing to take care of the environment on each and single container, there is another way for installing `multi-container` which is what we need ex: (`PostgreSQL, PgAdmin, JupyterLab, Superset and MinIO all together`) in this case we gonna use <b>docker-compose</b>, just by running following command (`in the root directory`):
+After we saw how we can isolate our workflow, for more easy way to work without needing to take care of the environment on each and single container, there is another way for installing `multi-container` which is what we need ex: (`PostgreSQL`, `PgAdmin`, `JupyterLab`, `Superset` and `MinIO` all together) in this case we gonna use <b>docker-compose</b>, just by running following command (`in the root directory`):
 ```python
 docker-compose up -d
 ```
@@ -118,11 +118,6 @@ docker-compose ps
     <th class="tg-yw4l"><b>Link</b></th>
   </tr>
   <!-- Dashboard Links -->
-  <tr>
-    <td class="tg-yw4l">Job Seekers Dashboard</td>
-    <td class="tg-yw4l">Dashboard of Saudi Arabia Job Seekers</td>
-    <td class="tg-yw4l"><a href="#"><p>Soon</p></a></td>
-  </tr>
   <tr>
     <td class="tg-yw4l">Covid Dashboard</td>
     <td class="tg-yw4l">Dashboard of Saudi Arabia Cases and Vaccinations Rates</td>
