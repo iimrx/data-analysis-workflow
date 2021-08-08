@@ -123,4 +123,10 @@ docker-compose ps
     <td class="tg-yw4l">Dashboard of Saudi Arabia Job Seekers</td>
     <td class="tg-yw4l"><a href="https://datastudio.google.com/reporting/aa7edb66-7d69-402d-a1ff-6a31f464f974"><p>Dashboard</p></a></td>
   </tr>
+   <!-- Resources Links -->
+   <tr>
+    <td class="tg-yw4l">Data Source</td>
+    <td class="tg-yw4l">Data of Saudi Arabia Job Seekers for 2021</td>
+    <td class="tg-yw4l"><a href="https://data.gov.sa/Data/ar/dataset/job_seeker-2021"><p>Dataset</p></a></td>
+  </tr>
 </table>
