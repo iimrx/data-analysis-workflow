@@ -8,5 +8,5 @@ echo "Finished Importing To DB!"
 sleep 10
 #after we load the data to sqlite3 db, we converting it ti .sql file path to make it eaiser,
 #for us to load it to multiple RDBs.
-sqlite3 database/db/coronadb.db .dump > database/sql/coronadb.sql
+sqlite3 database/db/jobseekers.db .dump > database/sql/jobseekers.sql
 echo "Finished Converting to SQL File.!"
