@@ -11,7 +11,7 @@ Project focuss on automating and containerizing the proccess of data <b>ETL (ext
 
 <!-- Topics -->
 ### Topics:
-- <a href="#automating-etl-process">Data Automation Process</a>
+- <a href="#automating-etl-process">Automating ETL Process</a>
 - <a href="#cicd-workflow-process">CI/CD Workflow Process</a>
 - <a href="#containerization-process">Containerization Workflow Process</a>
 
@@ -120,7 +120,7 @@ docker-compose ps
   <!-- Dashboard Links -->
   <tr>
     <td class="tg-yw4l">Job Seekers</td>
-    <td class="tg-yw4l">Dashboard of Saudi Arabia Job Seekers</td>
+    <td class="tg-yw4l">Dashboard of Saudi Arabia Job Seekers for 2021</td>
     <td class="tg-yw4l"><a href="https://datastudio.google.com/reporting/aa7edb66-7d69-402d-a1ff-6a31f464f974"><p>Dashboard</p></a></td>
   </tr>
    <!-- Resources Links -->
