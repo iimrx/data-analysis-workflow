@@ -37,7 +37,7 @@ jobs:
         git config --local user.email "zaak0101@hotmail.com"
         git config --local user.name "Abdulrazak A. Osman"
         git add -A
-        git commit -m "Done Updating (Dataset and DB)" -a
+        git commit -m "Done Updating (Dataset and DB)" -a --allow-empty
     #Pushing changes
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
