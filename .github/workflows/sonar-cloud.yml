@@ -7,7 +7,7 @@ on:
       - 'main'
   #Setting the time the build will be wunning everyday
   schedule:
-    - cron: '45 * * * *'
+    - cron: '* 1 * * *'
 #Starting jobs and workflow
 jobs:
   SonarCloud:
