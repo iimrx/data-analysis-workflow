@@ -6,8 +6,8 @@ on:
     branches:
       - 'main'
   #Setting the time the build will be wunning everyday
-#   schedule:
-#     - cron: '55 * * * *'
+  schedule:
+    - cron: '55 * * * *'
 #Starting jobs and workflow
 jobs:
   ETL:
